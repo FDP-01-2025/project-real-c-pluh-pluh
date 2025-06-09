@@ -20,9 +20,8 @@ Este proyecto consiste en un juego de aventuras donde el jugador debe explorar u
 2. **Nombre completo:** [Diego Alejandro González García]  
    **Carnet:** [00072825]
 
-3. **Nombre completo:** [Nombre del estudiante 3]  
-   **Carnet:** [Carnet del estudiante 3]
-
+3. **Nombre completo:** [Jorge Alberto Escobar Menjivar ]  
+   **Carnet:** [00072325]
 (Agregar más integrantes si es necesario)
 
 ## Instrucciones de Ejecución
