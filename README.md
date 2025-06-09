@@ -17,12 +17,11 @@ Este proyecto consiste en un juego de aventuras donde el jugador debe explorar u
 1. **Nombre completo:** [Juan Manuel Flores Crisóstomo]  
    **Carnet:** [00135025]
 
-2. **Nombre completo:** [Nombre del estudianhjhjhte 2]  
-   **Carnet:** [Carnet del estudiante 2]
+2. **Nombre completo:** [Diego Alejandro González García]  
+   **Carnet:** [00072825]
 
-3. **Nombre completo:** [Nombre del estudiante 3]  
-   **Carnet:** [Carnet del estudiante 3]
-
+3. **Nombre completo:** [Jorge Alberto Escobar Menjivar ]  
+   **Carnet:** [00072325]
 (Agregar más integrantes si es necesario)
 
 ## Instrucciones de Ejecución
