@@ -17,7 +17,7 @@ Este proyecto consiste en un juego de aventuras donde el jugador debe explorar u
 1. **Nombre completo:** [Juan Manuel Flores Crisóstomo]  
    **Carnet:** [00135025]
 
-2. **Nombre completo:** [Nombre del estudiante 2]  
+2. **Nombre completo:** [Nombre del estudianhjhjhte 2]  
    **Carnet:** [Carnet del estudiante 2]
 
 3. **Nombre completo:** [Nombre del estudiante 3]  
