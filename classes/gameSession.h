@@ -1,24 +1,30 @@
-#include <iostream>
+#ifndef GAMESESSION
+#define GAMESESSION_H
 
-using namespace std;
+#include "../utils/base.h"
 
 class GameSession {
     private:
-        bool isGameOver = false;
-        bool isRoundOver = false;
-        bool isPlayerOneTurn;
-        int gameRound = 1;
-        int playerOnePoints = 0;
-        int playerTwoPoints = 0;
+        bool isPlayerOneTurn, isGameOver = false;
+        int gameMode, currentRound = 1, roundsQuantity;
+        int playerOnePoints = 0, playerTwoPoints = 0;
 
     public:
         //getters 
         int getPlayerOnePoints();
         int getPlayerTwoPoints();
-        int getGameRound();
+        int getCurrentRound();
+        int getRoundsQuantity();
+        int getGameMode();
+        void getCurrentTurn(string coachOneName, string coachTwoName);
 
         //setters
         void setFirstTurn();
         void changeTurn();
         void finishRound(bool isPlayerOneWinner);
+        void isMatchOver(int gameRound, int roundsQuantity);
+
+        GameSession(int gameModeSelected, int roundsQuantitySelected);
 };
+
+#endif
