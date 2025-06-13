@@ -1,3 +1,2 @@
-g++ main.cpp ./utils/*.cpp ./entities/functions/*.cpp -o pokemonGame
 
 
