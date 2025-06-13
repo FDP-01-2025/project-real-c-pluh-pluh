@@ -2,7 +2,6 @@
 #include "randomNumber.h"
 #include <random>
 
-
 int getRandomNumber(int minNumber, int maxNumber) {
     //objeto rd de la clase random_device de la librería
     random_device rd;
