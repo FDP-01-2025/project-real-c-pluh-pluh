@@ -1,5 +1,5 @@
 #include "../../../../utils/base.h"
-#include "../../../src/entities/structs.h"
+#include "../../../../src/entities/structs.h"
 
 void getCurrentTurn(string coachOneName, string coachTwoName){
     if (match.isPlayerOneTurn) {
