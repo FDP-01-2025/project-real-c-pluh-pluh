@@ -1,7 +1,17 @@
 #include "../../../../utils/base.h"
 #include "../../../../src/entities/structs.h"
 
+void setFirstTurn() {
+    int randomNumber;
+    if (match.currentRound == 1) randomNumber = getRandomNumber(1,2);
+
+    if (randomNumber == 1) match.isPlayerOneTurn = true;
+    else match.isPlayerOneTurn = false;
+}
+
 void getCurrentTurn(string coachOneName, string coachTwoName){
+    setFirstTurn();
+    
     if (match.isPlayerOneTurn) {
         cout << "Es el turno de: " << coachOneName << endl;
     } else {

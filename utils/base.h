@@ -11,5 +11,6 @@ using namespace std;
 void cleanInput();
 int getRandomNumber(int minNumber, int maxNumber);
 void cleanScreen();
+void freezeInput();
 
 #endif
