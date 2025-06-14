@@ -3,6 +3,7 @@
         "stdexcept": "cpp",
         "ostream": "cpp",
         "limits": "cpp",
-        "iostream": "cpp"
+        "iostream": "cpp",
+        "chrono": "cpp"
     }
 }

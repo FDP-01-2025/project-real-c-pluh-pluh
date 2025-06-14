@@ -1,10 +1,12 @@
-#include <iostream>
+#include "./utils/base.h"
+#include "./src/game/game.h"
 #include <windows.h>
 
-using namespace std;
 
 int main() {
     SetConsoleOutputCP(CP_UTF8);
     SetConsoleCP(CP_UTF8);
+
+    game();
     return 0;
 }
