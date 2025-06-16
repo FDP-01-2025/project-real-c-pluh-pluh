@@ -4,6 +4,7 @@
         "ostream": "cpp",
         "limits": "cpp",
         "iostream": "cpp",
-        "chrono": "cpp"
+        "chrono": "cpp",
+        "vector": "cpp"
     }
 }
