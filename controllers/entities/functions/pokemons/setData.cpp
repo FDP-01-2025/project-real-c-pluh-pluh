@@ -63,39 +63,14 @@ int setWeaknessType(int pokemonType) {
     return weaknessType;
 }
 
-void setData(Pokemon pokemon) {
+void setData(Pokemon& pokemon) {
     string coachName, pokemonName;
     int selectedPokemon, pokemonType, pokemonHealth, pokemonWeaknessType;
 
-    while (true) {
-        try {
-            //nombre del entrenador
-            cout << "\n Dinos tu nombre entrenador: ";
-            if (!(cin >> coachName)) throw invalid_argument("Entrada inválida: se esperaba texto.");
-            //selección de pokemon
-            cout << "\n Selecciona tu pokemon: (Digita el número que le corresponda al pokemon que desees elegir)";
-            //showPokemonNames();
-            if (!(cin >> selectedPokemon)) throw invalid_argument("Entrada inválida: se esperaba un número.");
+    cout << "\n Dinos tu nombre entrenador: ";
+    coachName = askForString();
+    cout << "\n " << coachName << " ahora selecciona a tu pokemon: (Digita el número que le corresponda al pokemon que desees elegir): ";
+    pokemonName = askForInteger();
 
-            pokemonType = setPokemonType(selectedPokemon);
-            pokemonHealth = setPokemonHealth(pokemonType);
-            pokemonWeaknessType = setWeaknessType(pokemonType);
-            //setear información
-            pokemon.coach = coachName;
-            //setear pokemon name pero falta array de pokemones
-            pokemon.type = pokemonType;
-            pokemon.health = pokemonHealth;
-            pokemon.baseHealth = pokemonHealth;
-            pokemon.typeOfWeakness = pokemonWeaknessType;
-            
-            //terminar bucle
-            break;
-
-        } catch (const invalid_argument& e) {
-            cout << "\nLo sentimos, ha ocurrido un error: " << e.what() << endl;
-            cout << "\n Inténtalo de nuevo";
-            cleanInput();
-        }
-    }
-
+    freezeInput();
 }

@@ -8,6 +8,8 @@
 
 using namespace std;
 
+int askForInteger();
+string askForString();
 void cleanInput();
 int getRandomNumber(int minNumber, int maxNumber);
 void cleanScreen();

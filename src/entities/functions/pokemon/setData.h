@@ -1,3 +1,9 @@
-#include "../../../../utils/base.h"
+#ifndef SETDATA_H
+#define SETDATA_H
 
-void setData();
+#include "../../../../utils/base.h"
+#include "../../structs.h"
+
+void setData(Pokemon& pokemon);
+
+#endif
