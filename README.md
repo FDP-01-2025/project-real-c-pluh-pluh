@@ -22,7 +22,9 @@ Este proyecto consiste en un juego de aventuras donde el jugador debe explorar u
 
 3. **Nombre completo:** [Jorge Alberto Escobar Menjivar ]  
    **Carnet:** [00072325]
-(Agregar más integrantes si es necesario)
+
+3. **Nombre completo:** [Pablo Antonio Brito Elías]  
+   **Carnet:** [00179025]
 
 ## Instrucciones de Ejecución
 
