@@ -6,7 +6,8 @@ int setPokemonHealth(int pokemonType);
 int setWeaknessType(int pokemonType);
 int setDamage(int pokemonType);
 
-Pokemon setData() {
+//función para definir los datos de un jugador
+Pokemon setPlayerData() {
     Pokemon character;
 
     string pokemonName;
@@ -19,10 +20,26 @@ Pokemon setData() {
     //character.name = pokemonName, falta su lógica
     character.type = setPokemonType(selectedPokemon);
     character.baseHealth = setPokemonHealth(character.type);
+    character.health = setPokemonHealth(character.type);
     character.typeOfWeakness = setWeaknessType(character.type);
     character.damage = setDamage(character.type);
     
     return character;
+} 
+
+//función para definir datos de un jugador cpu
+Pokemon setCpuPlayer() {
+    Pokemon cpuCharacter;
+
+    cpuCharacter.coach = "Ninguno (Pokemon salvaje)";
+    // cpuCharacter.name = //logica para nombre de pokemon pendiente
+    cpuCharacter.type = setPokemonType(getRandomNumber(1,10));
+    cpuCharacter.baseHealth = setPokemonHealth(cpuCharacter.type);
+    cpuCharacter.health = setPokemonHealth(cpuCharacter.type);
+    cpuCharacter.typeOfWeakness = setWeaknessType(cpuCharacter.type);
+    cpuCharacter.damage = setDamage(cpuCharacter.type);    
+    
+    return cpuCharacter;
 }
 
 int setPokemonType(int selectedPokemon) {
@@ -50,7 +67,7 @@ int setPokemonHealth(int pokemonType) {
     }
 }
 
-int setWeaknessType(int pokemonType) {
+int setTypeOfWeakness(int pokemonType) {
     switch(pokemonType) {
         case 1: return 1;
         case 2: return 1;

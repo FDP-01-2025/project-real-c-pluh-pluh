@@ -9,7 +9,6 @@ void game() {
     showLoader();
     cleanScreen();
     playSingleMode();
-    // setData(playerOnePokemon);
     // testingMatch(playerOnePokemon, playerTwoPokemon, match);
     //select game mode menu
 }

@@ -31,7 +31,6 @@ int askForInteger() {
     string userInput;
     
     while (true) {
-        cout << "> ";
         cin >> userInput;
 
         if (isValidInteger(userInput)) {
@@ -49,7 +48,6 @@ string askForString() {
     string userInput;
     
     while (true) {
-        cout << "> ";
         cin >> userInput;
         if (containsOnlyLetters(userInput)) return userInput;
         else cout << "\n Error: Por favor ingresa un dato válido: Se esperaba texto";

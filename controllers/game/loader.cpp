@@ -36,6 +36,7 @@ void printCentered(const string lines[], int lineCount, int consoleWidth, int co
 }
 
 void showLoader() {
+    cleanScreen();
     string asciiArt[] = {
         "                                  ,'\\\\",
         "    _.----.        ____         ,'  _\\\\   ___    ___     ____ ",
