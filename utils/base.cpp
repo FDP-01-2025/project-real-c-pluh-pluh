@@ -2,7 +2,7 @@
 #include <chrono>
 
 //function used inside of askForInteger
-bool containsOnlyLetters(const string& text) {
+bool containsOnlyLetters(const string text) {
     for (char character : text) {
         if (!isalpha(static_cast<unsigned char>(character))) {
             return false;
@@ -11,26 +11,35 @@ bool containsOnlyLetters(const string& text) {
     return true;
 }
 
-// Pide al usuario un número entero válido
+bool isValidInteger(const string text) {
+    if (text.empty()) return false;
+
+    size_t start = 0;
+    if (text[0] == '-' || text[0] == '+') {
+        if (text.size() == 1) return false; // solo el signo, sin dígitos
+        start = 1;
+    }
+
+    for (size_t i = start; i < text.size(); ++i) {
+        if (!isdigit(static_cast<unsigned char>(text[i]))) return false;
+    }
+
+    return true;
+}
+
 int askForInteger() {
     string userInput;
-    int parsedNumber;
     
     while (true) {
         cout << "> ";
         cin >> userInput;
 
-        try {
-            size_t charactersUsed;
-            parsedNumber = stoi(userInput, &charactersUsed);
-
-            if (charactersUsed != userInput.size()) {
-                throw invalid_argument("Se espraba un entero");
-            }
-
+        if (isValidInteger(userInput)) {
+            // Ahora estamos seguros de que no fallará
+            int parsedNumber = stoi(userInput);
             return parsedNumber;
-        } catch (const invalid_argument& e) {
-            cout << "\n Error: Por favor ingresa un dato válido: se esperaba un entero";
+        } else {
+            cout << "\nError: Por favor ingresa un número entero válido.\n";
         }
     }
 }
@@ -40,22 +49,18 @@ string askForString() {
     string userInput;
     
     while (true) {
-        try {
-            cout << "> ";
-            cin >> userInput;
-             if (containsOnlyLetters(userInput)) return userInput;
-             else throw invalid_argument("Se espraba texto");
-
-        } catch(const invalid_argument& e) {
-            cout << "\n Error: Por favor ingresa un dato válido: Se esperaba texto";
-        } 
+        cout << "> ";
+        cin >> userInput;
+        if (containsOnlyLetters(userInput)) return userInput;
+        else cout << "\n Error: Por favor ingresa un dato válido: Se esperaba texto";
     }
 }
 
-void cleanInput() {
-    cin.clear();
-    cin.ignore(numeric_limits<streamsize>::max(), '\n');
-}
+//está en veremos la función
+// void cleanInput() {
+//     cin.clear();
+//     cin.ignore(numeric_limits<streamsize>::max(), '\n');
+// }
 
 int getRandomNumber(int minNumber, int maxNumber) {
     unsigned seed = chrono::system_clock::now().time_since_epoch().count();

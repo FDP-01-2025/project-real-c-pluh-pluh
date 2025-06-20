@@ -2,37 +2,13 @@
 #include "../../src/game/loader.h"
 #include <windows.h> 
 #include <string>
-#include <vector>
-
-//texto original
-
-// void showLoader() {
-// cout << R"(
-//                                   ,'\\
-//     _.----.        ____         ,'  _\\   ___    ___     ____ 
-// _,-'       `.     |    |  /`.   \,-'    |   \  /   |   |    \  |`. 
-// \      __    \    '-.  | /   `.  ___    |    \/    |   '-.   \ |  | 
-//  \.    \ \   |  __  |  |/    ,','_  `.  |          | __  |    \|  | 
-//    \    \/   /,' _`.|      ,' / / / /   |          ,' _`.|     |  | 
-//     \     ,-'/  /   \    ,'   | \/ / ,`.|         /  /   \  |     | 
-//      \    \ |   \_/  |   `-.  \    `'  /|  |    ||   \_/  | |\    | 
-//       \    \ \      /       `-.`.___,-' |  |\  /| \      /  | |   | 
-//        \    \ `.__,'|  |`-._    `|      |__| \/ |  `.__,'|  | |   | 
-//         \_.-'       |__|    `-._ |              '-.|     '-.| |   | 
-//                                 `'                            '-._| 
-
-//     )";
-
-
-//     Sleep(3000);
-// }
 
 int getConsoleWidth() {
     CONSOLE_SCREEN_BUFFER_INFO csbi;
     if (GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi)) {
         return csbi.srWindow.Right - csbi.srWindow.Left + 1;
     }
-    return 80; // ancho por defecto si falla
+    return 80;
 }
 
 int getConsoleHeight() {
@@ -40,18 +16,27 @@ int getConsoleHeight() {
     if (GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi)) {
         return csbi.srWindow.Bottom - csbi.srWindow.Top + 1;
     }
-    return 25; // alto por defecto si falla
+    return 25;
 }
 
-void printCentered(const string& line) {
-    int width = getConsoleWidth();
-    int padding = (width - (int)line.length()) / 2;
-    if (padding < 0) padding = 0;
-    cout << string(padding, ' ') << line << '\n';
+// Función para imprimir centrado, recibe arreglo estático y tamaño
+void printCentered(const string lines[], int lineCount, int consoleWidth, int consoleHeight) {
+    int paddingTop = (consoleHeight - lineCount) / 2;
+    if (paddingTop < 0) paddingTop = 0;
+
+    for (int i = 0; i < paddingTop; ++i) {
+        cout << endl;
+    }
+
+    for (int i = 0; i < lineCount; ++i) {
+        int paddingLeft = (consoleWidth - (int)lines[i].length()) / 2;
+        if (paddingLeft < 0) paddingLeft = 0;
+        cout << string(paddingLeft, ' ') << lines[i] << endl;
+    }
 }
 
 void showLoader() {
-    vector<string> asciiArt = {
+    string asciiArt[] = {
         "                                  ,'\\\\",
         "    _.----.        ____         ,'  _\\\\   ___    ___     ____ ",
         "_,-'       `.     |    |  /`.   \\,-'    |   \\  /   |   |    \\  |`. ",
@@ -66,21 +51,11 @@ void showLoader() {
         "                                `'                            '-._| ",
     };
 
-    int consoleHeight = getConsoleHeight();
-    int artHeight = (int)asciiArt.size();
+    int width = getConsoleWidth();
+    int height = getConsoleHeight();
+    int lineCount = sizeof(asciiArt) / sizeof(asciiArt[0]);
 
-    int paddingTop = (consoleHeight - artHeight) / 2;
-    if (paddingTop < 0) paddingTop = 0;
-
-    // Imprime líneas en blanco para centrar verticalmente
-    for (int i = 0; i < paddingTop; i++) {
-        cout << "\n";
-    }
-
-    // Imprime el ASCII centrado horizontalmente
-    for (const auto& line : asciiArt) {
-        printCentered(line);
-    }
+    printCentered(asciiArt, lineCount, width, height);
 
     Sleep(5000);
 }

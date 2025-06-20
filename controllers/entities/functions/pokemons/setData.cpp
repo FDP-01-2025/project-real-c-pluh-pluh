@@ -63,7 +63,7 @@ int setWeaknessType(int pokemonType) {
     return weaknessType;
 }
 
-void setData(Pokemon& pokemon) {
+void setData(Pokemon pokemon) {
     string coachName, pokemonName;
     int selectedPokemon, pokemonType, pokemonHealth, pokemonWeaknessType;
 
