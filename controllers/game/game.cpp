@@ -3,11 +3,12 @@
 #include "../../src/game/testMatch.h"
 #include "../../src/entities/structs.h"
 #include "../../src/entities/functions/pokemon/setData.h"
+#include "../../src/game/singlePlayerMode.h"
 
 void game() {
     showLoader();
     cleanScreen();
-    setData(playerOnePokemon);
+    playSingleMode();
     // testingMatch(playerOnePokemon, playerTwoPokemon, match);
     //select game mode menu
 }

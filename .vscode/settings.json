@@ -5,6 +5,7 @@
         "limits": "cpp",
         "iostream": "cpp",
         "chrono": "cpp",
-        "vector": "cpp"
+        "vector": "cpp",
+        "string": "cpp"
     }
 }

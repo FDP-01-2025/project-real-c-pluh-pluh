@@ -8,6 +8,7 @@ struct Pokemon {
     string coach;
     int baseHealth = 1, health = 1;
     int type = 1, typeOfWeakness = 1;
+    int damage = 1;
 };
 
 struct GameMatch {

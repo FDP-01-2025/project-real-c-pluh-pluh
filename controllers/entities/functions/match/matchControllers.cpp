@@ -33,5 +33,6 @@ void finishRound() {
 }
 
 void isMatchOver() {
-    if (match.currentRound <= match.roundsQuantity) match.isMatchOver = true;
+    if (match.currentRound <= match.roundsQuantity) match.isMatchOver = false;
+    else match.isMatchOver = true;
 }

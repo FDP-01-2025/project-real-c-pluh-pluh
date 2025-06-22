@@ -4,6 +4,6 @@
 #include "../../../../utils/base.h"
 #include "../../structs.h"
 
-void setData(Pokemon& pokemon);
+void setData(Pokemon pokemon);
 
 #endif
