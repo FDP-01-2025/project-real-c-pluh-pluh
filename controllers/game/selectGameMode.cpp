@@ -4,8 +4,9 @@
 
 using namespace std;
 
-// Displays the main menu with ASCII art
-void showMainMenu() {
+// Displays the main menu 
+void showMainMenu() 
+{
     cout << R"(  -----
 
 ```
@@ -24,3 +25,21 @@ void showMainMenu() {
     cout << "2. Two Player Mode" << endl;
     cout << "=========================================" << endl;
 }
+// Prompts the user to select a game mode (1 or 2 players)
+int selectGameMode() {
+    int option;
+
+    do {
+        cout << "Select a game mode (1 or 2): ";
+        cin >> option;
+
+        if (cin.fail() || (option != 1 && option != 2)) {
+            cout << "Invalid option. Please enter 1 or 2." << endl;
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        }
+    } while (option != 1 && option != 2);
+
+    return option;
+}
+
