@@ -1,7 +1,13 @@
-//  ____   ___  _   _ _   _ ____    _ 
-// |  _ \ / _ \| | | | \ | |  _ \  / |
-// | |_) | | | | | | |  \| | | | | | |
-// |  _ <| |_| | |_| | |\  | |_| | | |
-// |_| \_\\___/ \___/|_| \_|____/  |_|
+#ifndef SELECT_GAME_MODE_H
+#define SELECT_GAME_MODE_H
 
-// cout << R "()"
+void showMainMenu();
+
+int selectGameMode();
+
+
+int selectRounds();
+
+void showMatchWinner(int player1Wins, int player2Wins);
+
+#endif
