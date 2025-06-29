@@ -5,7 +5,7 @@
 #include "../../structs.h" // Incluir el "Header" de estructuras para las definiciones de Pokémon.
 #include "../../enums/pokemonAttacks.h" // Incluir el "Header" de enumeraciones para los tipos de ataques de Pokémon.
 
-void attack(Pokemon pokemon, Pokemon opponent); // La función de ataque que toma dos Usuarios como parámetros.
+void attackTurn(Pokemon playerOne, Pokemon playerTwo); // La función de ataque que toma dos Usuarios como parámetros.
 void performAttack(Pokemon attacker, Pokemon defender, int attackType); // La función que realiza el ataque, tomando el atacante, el defensor y el tipo de ataque como parámetros.
 
 
