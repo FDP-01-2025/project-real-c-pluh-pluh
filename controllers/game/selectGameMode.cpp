@@ -43,3 +43,21 @@ int selectGameMode() {
     return option;
 }
 
+// Prompts the user to choose number of rounds (only 3 or 5)
+int selectRounds() {
+    int rounds;
+
+    do {
+        cout << "Select number of rounds (3 or 5): ";
+        cin >> rounds;
+
+        if (cin.fail() || (rounds != 3 && rounds != 5)) {
+            cout << "Invalid input. Please enter 3 or 5." << endl;
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        }
+    } while (rounds != 3 && rounds != 5);
+
+    return rounds;
+}
+
