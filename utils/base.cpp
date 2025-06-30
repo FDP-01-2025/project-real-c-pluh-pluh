@@ -1,5 +1,7 @@
 #include "base.h"
 #include <chrono>
+#include <cstdlib>
+#include "base.h"
 
 //function used inside of askForInteger
 bool containsOnlyLetters(const string text) {
@@ -75,4 +77,12 @@ void freezeInput() {
     //literalmente querer leer algo de puro relleno, no darle nada solo para "congelar" y observar comportamiento del juego
     int freeze;
     cin >> freeze;
+}
+
+void clearScreen() {
+#ifdef _WIN32
+    system("cls");
+#else
+    system("clear");
+#endif
 }
