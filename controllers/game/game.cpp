@@ -7,8 +7,9 @@
 #include "../../src/game/selectGameMode.h"
 #include "../../src/enums/gameModes.h"
 
+//función principal del juego que manejará toda la lógica
 void game() {
-    //console setting
+    //configuración de metadatos
     SetConsoleOutputCP(CP_UTF8);
     SetConsoleCP(CP_UTF8);
 

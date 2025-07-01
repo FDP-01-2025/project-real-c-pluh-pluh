@@ -3,7 +3,32 @@
 #include <cstdlib>
 #include "base.h"
 
-//function used inside of askForInteger
+//declaración de funciones
+void cleanScreen();
+void freezeInput();
+int getRandomNumber(int minNumber, int maxNumber);
+//funciones de input
+bool containsOnlyLetters(const string text);
+bool isValidInteger(const string text);
+int askForInteger();
+string askForString();
+
+int getRandomNumber(int minNumber, int maxNumber) {
+    unsigned seed = chrono::system_clock::now().time_since_epoch().count();
+    mt19937 gen(seed);
+    uniform_int_distribution<> distrib(minNumber, maxNumber);
+    return distrib(gen);
+}
+
+void cleanScreen() {system("cls");}
+
+//literalmente querer leer algo de puro relleno, no darle nada solo para "congelar" y observar comportamiento del juego
+void freezeInput() {
+    int freeze;
+    cin >> freeze;
+}
+
+//funciones para input
 bool containsOnlyLetters(const string text) {
     for (char character : text) {
         if (!isalpha(static_cast<unsigned char>(character))) {
@@ -56,25 +81,4 @@ string askForString() {
     }
 }
 
-//está en veremos la función
-// void cleanInput() {
-//     cin.clear();
-//     cin.ignore(numeric_limits<streamsize>::max(), '\n');
-// }
 
-int getRandomNumber(int minNumber, int maxNumber) {
-    unsigned seed = chrono::system_clock::now().time_since_epoch().count();
-    mt19937 gen(seed);
-    uniform_int_distribution<> distrib(minNumber, maxNumber);
-    return distrib(gen);
-}
-
-void cleanScreen() {
-    system("cls");
-}
-
-void freezeInput() {
-    //literalmente querer leer algo de puro relleno, no darle nada solo para "congelar" y observar comportamiento del juego
-    int freeze;
-    cin >> freeze;
-}

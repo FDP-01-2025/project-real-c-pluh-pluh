@@ -3,13 +3,15 @@
 #include "../../../../src/enums/pokemonTypes.h"
 #include "../../../../src/game/selectPokemon.h"
 
-int setPokemonType(int selectedPokemon);
-void setAdittionalData(Pokemon &character);
-void printData(Pokemon &player);
+//declaración de funciones a usar
+int setPokemonType(int selectedPokemon); //función que define el tipo de pokemon
+void setAdittionalData(Pokemon &character); // función que define vida, daño, etc
+void printData(Pokemon &player); //función para imprimir datos (como logs)
 
 //función para definir los datos de un jugador
 Pokemon setPlayerData() {
-    Pokemon player;
+    //definición de variables
+    Pokemon player; //dato del tipo Pokemon que se retornará
     string pokemonName;
     int selectedPokemon;
 
@@ -27,7 +29,8 @@ Pokemon setPlayerData() {
 
 //función para definir datos de un jugador cpu
 Pokemon setCpuPlayer() {
-    Pokemon cpuCharacter;
+    //definición de variables
+    Pokemon cpuCharacter; //dato del tipo Pokemon que se retornará
     int randomSelectedPokemon;
 
     cpuCharacter.coach = "Ninguno (Pokemon salvaje)";
@@ -38,7 +41,6 @@ Pokemon setCpuPlayer() {
 
     return cpuCharacter;
 }
-
 
 void printData(Pokemon &player) {
     cout << "\n\n=== Pokemon Stats ===" << endl;
@@ -51,6 +53,7 @@ void printData(Pokemon &player) {
     cout << "Damage: " << player.damage << endl;
 }
 
+//función que recibe el número que el usuario digite en el menú
 int setPokemonType(int selectedPokemon) {
     if (selectedPokemon >= 1 && selectedPokemon <= 2) return WATER;
     else if (selectedPokemon >= 3 && selectedPokemon <= 4) return FIRE;
@@ -63,6 +66,7 @@ int setPokemonType(int selectedPokemon) {
     return -1;
 }
 
+//recibe a la variable de tipo Pokemon y una vez se ha obtenido su tipo se define su vida, daño y debilidad
 void setAdittionalData(Pokemon &character) {
     switch(character.type) {
         case WATER:

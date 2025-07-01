@@ -1,5 +1,6 @@
 #include "../../../src/game/singleMode/showMap.h"
 
+//función que muestra las opciones para buscar una batalla en el modo solitario
 void showMap() {
     cout << "\n ¡Bienvenido al Mapa de Aventuras Pokémon!";
     cout << "\n ¿Dónde quieres buscar una gran aventura? \n" ;
@@ -12,7 +13,7 @@ void showMap() {
     cout << "|        🌊          |        🏥          |        ⚡           |" << endl;
     cout << "+--------------------+---------------------+---------------------+" << endl;
     cout << "|  Cueva Zubat       |  Gimnasio Fuego     |  Mercado Magikarp   |" << endl;
-    cout << "|        🕳️         |        🔥          |        🎣            |" << endl;
+    cout << "|        🕳️         |        🔥             |       🎣            |" << endl;
     cout << "+--------------------+---------------------+---------------------+" << endl;
 
     cout << " 1. Bosque Verde      2. Ruta Rocosa       3. Plaza Pokémon\n";

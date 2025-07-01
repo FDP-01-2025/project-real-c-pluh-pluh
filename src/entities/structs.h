@@ -3,6 +3,7 @@
 
 #include "../../utils/base.h"
 
+//estructura que contiene los datos a utilizar para los jugadores
 struct Pokemon {
     string name;
     string coach;
@@ -11,13 +12,11 @@ struct Pokemon {
     int damage = 1;
 };
 
+//estructura que contiene los datos requeridos para que se jueguen las partidad
 struct GameMatch {
     bool isPlayerOneTurn, isMatchOver = false;
     int gameMode, currentRound = 1, roundsQuantity;
     int playerOnePoints = 0, playerTwoPoints = 0;
 };
-
-extern Pokemon playerOnePokemon, playerTwoPokemon;
-extern GameMatch match;
 
 #endif 

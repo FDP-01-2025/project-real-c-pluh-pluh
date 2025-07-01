@@ -1,7 +1,7 @@
 #include "../../utils/base.h"
 #include "../../src/game/loader.h"
-#include <windows.h> 
-#include <string>
+
+//función que trabaja con medidas de la consola para mostrar el ascii art de forma centrada
 
 int getConsoleWidth() {
     CONSOLE_SCREEN_BUFFER_INFO csbi;

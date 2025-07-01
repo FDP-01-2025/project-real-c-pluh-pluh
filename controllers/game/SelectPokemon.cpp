@@ -3,7 +3,7 @@
 #include <fstream>
 #include <string>
 
-string pokemon[10];
+string pokemon[10]; //arreglo que será definido al realizar lectura de la base de datos
 
 void showPokemonNames();
 

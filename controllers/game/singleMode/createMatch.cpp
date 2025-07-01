@@ -2,9 +2,10 @@
 #include "../../../src/entities/structs.h"
 #include "../../../src/entities/functions/pokemon/setData.h"
 
-void createMatch() {
-    Pokemon player, cpuPlayer;
-    cleanScreen();
-    player = setPlayerData();
-    cpuPlayer = setCpuPlayer();
-}
+//función que maneja la lógica de una partida
+// void createMatch() {
+//     Pokemon player, cpuPlayer;
+//     cleanScreen();
+//     player = setPlayerData();
+//     cpuPlayer = setCpuPlayer();
+// }
