@@ -1,4 +1,4 @@
-#include "../../src/game/singlePlayerMode.h"
+#include "../../../src/game/singleMode/showMap.h"
 
 void showMap() {
     cout << "\n ¡Bienvenido al Mapa de Aventuras Pokémon!";
@@ -18,24 +18,4 @@ void showMap() {
     cout << " 1. Bosque Verde      2. Ruta Rocosa       3. Plaza Pokémon\n";
     cout << " 4. Lago Lapras       5. Centro Pokémon    6. Calle Pikachu\n";
     cout << " 7. Cueva Zubat       8. Gimnasio Fuego    9. Mercado Magikarp";
-}
-
-void playSingleMode() {
-    int randomPlace = getRandomNumber(1,9);
-    int placeSelection;
-
-    do {
-        showMap();  
-        cout << "\n\n Selecciona un lugar del mapa para explorar (Digita una opción):" ;
-        placeSelection = askForInteger();
-
-        if ( placeSelection == randomPlace) {
-            cout << "¡Un Pokémon salvaje apareció! 🐾⚔️" << endl;
-            return;
-        } else {
-            cout << "\n Aquí no hay nada... sigue buscando " << endl;
-            Sleep(2000);
-            cleanScreen();
-        }
-    } while (true);
 }

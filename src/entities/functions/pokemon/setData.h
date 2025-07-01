@@ -4,6 +4,10 @@
 #include "../../../../utils/base.h"
 #include "../../structs.h"
 
-void setData(Pokemon pokemon);
+// void setData(Pokemon pokemon);
+Pokemon setPLayerData();
+Pokemon setCpuPlayer();
+void setPokemonType(Pokemon &character);
+void setAdittionalData();
 
 #endif

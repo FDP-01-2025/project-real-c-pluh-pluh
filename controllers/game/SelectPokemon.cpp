@@ -1,17 +1,16 @@
-#include "../../../../utils/base.h"
+#include "../../utils/base.h"
+#include "../../src/entities/structs.h"
 #include <fstream>
 #include <string>
 
-using namespace std;
 
-int main() {
+int selectPokemon(Pokemon &character) {
     string Pokemon[10];
 
     // Abrimos el archivo con los nombres
     ifstream archivo("pokemons.txt");
     if (!archivo.is_open()) {
         cout << "No se pudo abrir el archivo pokemons.txt" << endl;
-        return 1;
     }
 
     // Leer los nombres desde el archivo y guardarlos en el arreglo
@@ -19,7 +18,6 @@ int main() {
         getline(archivo, Pokemon[i]);
         if (archivo.fail()) {
             cout << "Error leyendo línea " << i + 1 << endl;
-            return 1;
         }
     }
 
@@ -34,13 +32,14 @@ int main() {
     // Pedir al usuario que elija uno
     int election;
     cout << "\nElige un Pokémon por número (1-10): ";
-    cin >> election;
+    election = askForInteger();
 
     if (election >= 1 && election <= 10) {
         cout << "Has elegido a " << Pokemon[election - 1] << "!\n";
+        character.name = Pokemon[election - 1];
     } else {
         cout << "Opción inválida.\n";
     }
 
-    return 0;
+    return election;
 }   

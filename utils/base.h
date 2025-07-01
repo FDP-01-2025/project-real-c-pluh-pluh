@@ -1,5 +1,3 @@
-#ifndef COMMON_H
-#define COMMON_H
 #ifndef BASE_H
 #define BASE_H
 
@@ -7,6 +5,7 @@
 #include <limits>
 #include <random>
 #include <cstdlib>
+#include <windows.h>
 
 using namespace std;
 

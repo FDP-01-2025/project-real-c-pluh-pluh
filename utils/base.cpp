@@ -78,11 +78,3 @@ void freezeInput() {
     int freeze;
     cin >> freeze;
 }
-
-void clearScreen() {
-#ifdef _WIN32
-    system("cls");
-#else
-    system("clear");
-#endif
-}
