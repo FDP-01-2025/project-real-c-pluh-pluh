@@ -17,7 +17,7 @@ void playSingleMode() {
             cleanScreen();
             cout << "¡Un Pokémon salvaje apareció! 🐾⚔️" << endl;
             Sleep(2000);
-            createMatch();
+            // createMatch();
             break;
         } else {
             cout << "\n Aquí no hay nada... sigue buscando " << endl;
