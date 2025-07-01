@@ -2,11 +2,11 @@
 #define POKEMON_TYPES_H // Definir el "header" si no se ha hecho ya.
 
 enum PokemonTypes { // Enumeración para los tipos de ataques de Pokémon
-    WATER,
-    FIRE,
-    GRASS,
-    ELECTRIC,
-    ROCK
+    WATER, //weakness: electric
+    FIRE, //weakness: water
+    GRASS, //weakness: fire
+    ELECTRIC, //weakness: rock
+    ROCK //weakness: grass
 };
 
 #endif // POKEMON_TYPES_H

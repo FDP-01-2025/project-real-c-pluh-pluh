@@ -4,46 +4,52 @@
 #include "../../../../src/game/selectPokemon.h"
 
 int setPokemonType(int selectedPokemon);
-int setPokemonHealth(int pokemonType);
-int setWeaknessType(int pokemonType);
-int setDamage(int pokemonType);
+void setAdittionalData(Pokemon &character);
+void printData(Pokemon &player);
 
 //función para definir los datos de un jugador
 Pokemon setPlayerData() {
     Pokemon player;
-
     string pokemonName;
     int selectedPokemon;
 
     cout << "\n Dinos tu nombre entrenador: ";
     player.coach = askForString();
-    // cout << "\n " << player.coach << " ahora selecciona a tu pokemon: (Digita el número que le corresponda al pokemon que desees elegir): ";
+    cout << "\n " << player.coach << " ahora selecciona a tu pokemon, elige un Pokemon por número (1-10):\n";
     
     selectedPokemon = selectPokemon(player);
-    //character.name = pokemonName, falta su lógica
-    // player.type = setPokemonType(selectedPokemon);
-    // player.baseHealth = setPokemonHealth(player.type);
-    // player.health = setPokemonHealth(player.type);
-    // player.typeOfWeakness = setWeaknessType(player.type);
-    // player.damage = setDamage(player.type);
-    
+    player.type = setPokemonType(selectedPokemon);
+    setAdittionalData(player);
+    printData(player);
+
     return player;
 } 
 
-// //función para definir datos de un jugador cpu
-// Pokemon setCpuPlayer() {
-//     Pokemon cpuCharacter;
+//función para definir datos de un jugador cpu
+Pokemon setCpuPlayer() {
+    Pokemon cpuCharacter;
+    int randomSelectedPokemon;
 
-//     cpuCharacter.coach = "Ninguno (Pokemon salvaje)";
-//     // cpuCharacter.name = //logica para nombre de pokemon pendiente
-//     cpuCharacter.type = setPokemonType(getRandomNumber(1,10));
-//     cpuCharacter.baseHealth = setPokemonHealth(cpuCharacter.type);
-//     cpuCharacter.health = setPokemonHealth(cpuCharacter.type);
-//     cpuCharacter.typeOfWeakness = setWeaknessType(cpuCharacter.type);
-//     cpuCharacter.damage = setDamage(cpuCharacter.type);    
-    
-//     return cpuCharacter;
-// }
+    cpuCharacter.coach = "Ninguno (Pokemon salvaje)";
+    randomSelectedPokemon = setCpuPokemon(cpuCharacter);
+    cpuCharacter.type = setPokemonType(randomSelectedPokemon);
+    setAdittionalData(cpuCharacter);
+    printData(cpuCharacter);
+
+    return cpuCharacter;
+}
+
+
+void printData(Pokemon &player) {
+    cout << "\n\n=== Pokemon Stats ===" << endl;
+    cout << "Name: " << player.name << endl;
+    cout << "Coach: " << player.coach << endl;
+    cout << "Base Health: " << player.baseHealth << endl;
+    cout << "Current Health: " << player.health << endl;
+    cout << "Type: " << player.type << endl;
+    cout << "Type of Weakness: " << player.typeOfWeakness << endl;
+    cout << "Damage: " << player.damage << endl;
+}
 
 int setPokemonType(int selectedPokemon) {
     if (selectedPokemon >= 1 && selectedPokemon <= 2) return WATER;
@@ -94,42 +100,3 @@ void setAdittionalData(Pokemon &character) {
             break;
     }
 }
-
-// int setPokemonHealth(int pokemonType) {
-//     switch(pokemonType) {
-//         case 1: return 100;
-//         case 2: return 100;
-//         case 3: return 100;
-//         case 4: return 100;
-//         case 5: return 100;
-//         default:
-//             cout << "\n Tipo de Pokémon no válido para salud.";
-//             return -1;
-//     }
-// }
-
-// int setTypeOfWeakness(int pokemonType) {
-//     switch(pokemonType) {
-//         case 1: return 1;
-//         case 2: return 1;
-//         case 3: return 1;
-//         case 4: return 1;
-//         case 5: return 1;
-//         default:
-//             cout << "\n Tipo de Pokémon no válido para debilidad.";
-//             return -1;
-//     }
-// }
-
-// int setDamage(int pokemonType) {
-//     switch(pokemonType) {
-//         case 1: return 1;
-//         case 2: return 1;
-//         case 3: return 1;
-//         case 4: return 1;
-//         case 5: return 1;
-//         default:
-//             cout << "\n Tipo de Pokémon no válido para daño.";
-//             return -1;
-//     }
-// }

@@ -5,7 +5,7 @@
 #include "../../structs.h"
 
 // void setData(Pokemon pokemon);
-Pokemon setPLayerData();
+Pokemon setPlayerData();
 Pokemon setCpuPlayer();
 void setPokemonType(Pokemon &character);
 void setAdittionalData();
