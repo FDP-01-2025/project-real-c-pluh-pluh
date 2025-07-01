@@ -1,6 +1,6 @@
 #include "../../../../utils/base.h"
 #include "../../../../src/enums/pokemonAttacks.h"
-#include "../../../../src//entities/structs.h"
+#include "../structs.h"
 
 void performAttack(Pokemon &attacker, Pokemon &defender, int attackType) {
     int finalDamage = 0;
@@ -20,7 +20,7 @@ void performAttack(Pokemon &attacker, Pokemon &defender, int attackType) {
     }
     defender.health -= finalDamage; //Restar el daño final a la vida del defensor.
     
-    if (defender.health < 0) { 
+    if (defender.health <= 0) { 
         defender.health = 0; //Si la vida del defensor es menor a 0 automaticamente colocar el valor de 0.
         cout << attacker.name << " ataca a " << defender.name << " por " << finalDamage << " dano! (Salud Restante: " << defender.health << ")\n";
         //Mensaje de el ataque de quien y a quien y cuanto es el daño final.
