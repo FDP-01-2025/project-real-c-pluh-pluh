@@ -70,33 +70,33 @@ int setPokemonType(int selectedPokemon) {
 void setAdittionalData(Pokemon &character) {
     switch(character.type) {
         case WATER:
-            character.baseHealth = 290;
-            character.health = 290;
-            character.damage = 33;
+            character.baseHealth = 90;
+            character.health = 90;
+            character.damage = 32;
             character.typeOfWeakness = ELECTRIC;
             break;
         case FIRE:
-            character.baseHealth = 215;
-            character.health = 215;
-            character.damage = 55;
+            character.baseHealth = 86;
+            character.health = 86;
+            character.damage = 34;
             character.typeOfWeakness = WATER;
             break;
         case GRASS:
-            character.baseHealth = 255;
-            character.health = 255;
-            character.damage = 42;
+            character.baseHealth = 115;
+            character.health = 115;
+            character.damage = 26;
             character.typeOfWeakness = FIRE;
             break;
         case ELECTRIC:
-            character.baseHealth = 220;
-            character.health = 220;
-            character.damage = 53;
+            character.baseHealth = 130;
+            character.health = 130;
+            character.damage = 20;
             character.typeOfWeakness = ROCK;
             break;
         case ROCK:
-            character.baseHealth = 290;
-            character.health = 290;
-            character.damage = 33;
+            character.baseHealth = 105;
+            character.health = 105;
+            character.damage = 30;
             character.typeOfWeakness = GRASS;
             break;
         default:
