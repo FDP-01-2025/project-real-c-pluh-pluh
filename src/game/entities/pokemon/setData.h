@@ -2,7 +2,7 @@
 #define SETDATA_H
 
 #include "../../../../utils/base.h"
-#include "../../structs.h"
+#include "../structs.h"
 
 //función que se usa para obtener los datos de un jugador y retornar un dato tipo estructura Pokemon
 Pokemon setPlayerData();

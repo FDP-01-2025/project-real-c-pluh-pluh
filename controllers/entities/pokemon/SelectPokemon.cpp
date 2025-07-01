@@ -1,7 +1,6 @@
-#include "../../utils/base.h"
-#include "../../src/entities/structs.h"
+#include "../../../utils/base.h"
+#include "../../../src/game/entities/structs.h"
 #include <fstream>
-#include <string>
 
 string pokemon[10]; //arreglo que será definido al realizar lectura de la base de datos
 
@@ -40,20 +39,20 @@ int setCpuPokemon(Pokemon &cpuCharacter) {
 //función para mostrar los nombres desde la base de datos
 void showPokemonNames() {
     // Abrimos el archivo con los nombres
-    ifstream archivo("controllers/game/PokemonNames.txt");
-    if (!archivo.is_open()) {
+    ifstream file("controllers/entities/pokemon/PokemonNames.txt");
+    if (!file.is_open()) {
         cout << "No se pudo abrir el archivo pokemons.txt" << endl;
     }
 
     // Leer los nombres desde el archivo y guardarlos en el arreglo
     for (int i = 0; i < 10; ++i) {
-        getline(archivo, pokemon[i]);
-        if (archivo.fail()) {
+        getline(file, pokemon[i]);
+        if (file.fail()) {
             cout << "Error leyendo línea " << i + 1 << endl;
         }
     }
 
-    archivo.close();
+    file.close();
 
     // Mostrar todos los Pokémon
     for (int i = 0; i < 10; ++i) {

@@ -1,6 +1,6 @@
 #include <iostream>
 #include <limits>
-#include "../../src/game/selectGameMode.h"
+#include "../src/game/selectGameMode.h"
 
 using namespace std;
 

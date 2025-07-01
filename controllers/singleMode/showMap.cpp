@@ -1,4 +1,4 @@
-#include "../../../src/game/singleMode/showMap.h"
+#include "../../src/game/singleMode/showMap.h"
 
 //función que muestra las opciones para buscar una batalla en el modo solitario
 void showMap() {

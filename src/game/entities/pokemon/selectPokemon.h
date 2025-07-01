@@ -1,5 +1,6 @@
-#include "../../utils/base.h"
-#include "../../src/entities/structs.h"
+#include "../../../../utils/base.h"
+#include "../structs.h"
+
 
  //carga los nombres desde el txt y los guarda en un arreglo que se recorre
 void showPokemonNames();
