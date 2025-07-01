@@ -20,7 +20,7 @@ void game() {
     gameMode = selectGameMode();
     roundsQuantity = selectRounds();
 
-    if (gameMode == SINGLE_PLAYER) playSingleMode();
+    if (gameMode == SINGLE_PLAYER) playSingleMode(roundsQuantity);
     else if (gameMode == MULTI_PLAYER);
     else;
     // playSingleMode();

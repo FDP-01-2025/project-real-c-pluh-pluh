@@ -1,9 +1,11 @@
 #include "../../src/game/singleMode/singlePlayerMode.h"
-#include "../../src/game/singleMode/createMatch.h"
+#include "../../src/game/entities/match/createMatch.h"
 #include "../../src/game/singleMode/showMap.h"
+#include "../../src/enums/gameModes.h"
 
 //función principal para el modo de juego solitario
-void playSingleMode() {
+//recibe la cantidad de rondas desde game.cpp para pasarle ese dato a createMatch()
+void playSingleMode(int roundsQuantity) {
     int randomPlace = getRandomNumber(1,9);
     int placeSelection;
 
@@ -14,14 +16,14 @@ void playSingleMode() {
         placeSelection = askForInteger();
 
         if (placeSelection == randomPlace) {
-            cleanScreen();
             cout << "¡Un Pokémon salvaje apareció! 🐾⚔️" << endl;
             Sleep(2000);
-            createMatch();
+            cleanScreen();
+            createMatch(SINGLE_PLAYER, roundsQuantity);
             break;
         } else {
-            cout << "\n Aquí no hay nada... sigue buscando " << endl;
-            Sleep(2000);
+            cout << "\n Aquí no hay nada... sigue buscando" << endl;
+            Sleep(1000);
             cleanScreen();
         }
     }
