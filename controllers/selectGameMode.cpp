@@ -7,6 +7,7 @@ using namespace std;
 // Displays the main menu 
 void showMainMenu() 
 {
+    cleanScreen(); // Clear the console
     cout << R"(  __  __           _             _          _                        
                     |  \/  | ___   __| | ___     __| | ___    (_)_   _  ___  __ _  ___  
                     | |\/| |/ _ \ / _` |/ _ \   / _` |/ _ \   | | | | |/ _ \/ _` |/ _ \ 
