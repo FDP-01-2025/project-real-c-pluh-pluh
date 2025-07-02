@@ -17,10 +17,12 @@ void showMainMenu()
     )" << endl;
 
 
-    cout << "=============== MAIN MENU ===============" << endl;
-    cout << "1. Single Player Mode" << endl;
-    cout << "2. Two Player Mode" << endl;
-    cout << "=========================================" << endl;
+    cout << "╔══════════════════════════════════════════════╗" << endl;
+    cout << "║               MAIN MENU                     ║" << endl;
+    cout << "╠══════════════════════════════════════════════╣" << endl;
+    cout << "║  1. Single Player Mode                      ║" << endl;
+    cout << "║  2. Two Player Mode                         ║" << endl;
+    cout << "╚══════════════════════════════════════════════╝" << endl;
 }
 // Prompts the user to select a game mode (1 or 2 players)
 int selectGameMode() {
