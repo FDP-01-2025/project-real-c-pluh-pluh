@@ -1,4 +1,4 @@
-#include "../../utils/base.h"
-#include "../entities/structs.h"
+// #include "../../utils/base.h"
+// #include "../entities/structs.h"
 
-void testingMatch(Pokemon playerOne, Pokemon playerTwo, GameMatch match);
+// void testingMatch(Pokemon playerOne, Pokemon playerTwo, GameMatch match);

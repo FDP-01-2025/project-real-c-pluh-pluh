@@ -1,4 +1,4 @@
 enum GameModes {
-    singlePlayer,
-    multiplayer,
+    SINGLE_PLAYER = 1,
+    MULTI_PLAYER,
 };

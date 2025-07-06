@@ -1,3 +1,0 @@
-comando para compilar
-
-g++ main.cpp ./controllers/entities/functions/match/*.cpp ./controllers/entities/functions/pokemons/*.cpp ./controllers/game/*.cpp ./utils/*.cpp ./controllers/entities/*.cpp -o pokemonGame
