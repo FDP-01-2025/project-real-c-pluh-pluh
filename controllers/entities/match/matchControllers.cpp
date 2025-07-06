@@ -6,11 +6,9 @@
 //define el turno de jugador si la partida empieza
 void setFirstTurn(GameMatch &match) {
     int randomNumber;
-    if (match.currentRound == 1) {
-         randomNumber = getRandomNumber(1,2);
-        if (randomNumber == 1) { match.isPlayerOneTurn = true; match.playerOneTurns++; }
-        else { match.isPlayerOneTurn = false; match.playerTwoTurns++; }
-    }
+    randomNumber = getRandomNumber(1,2);
+    if (randomNumber == 1) { match.isPlayerOneTurn= true; match.playerOneTurns++; }
+    else { match.isPlayerOneTurn = false; match.playerTwoTurns++; }
 }
 
 
@@ -40,10 +38,6 @@ void finishRound(GameMatch &match, Pokemon &playerOne) {
         match.playerOnePoints++;
     }
     match.currentRound++;
-}
-
-//finalizar la ronda
-void isMatchOver(GameMatch &match) {
-    if (match.currentRound <= match.roundsQuantity) match.isMatchOver = false;
-    else match.isMatchOver = true;
+    match.playerOneTurns = 0;
+    match.playerTwoTurns = 0;
 }

@@ -15,7 +15,7 @@ struct Pokemon {
 
 //estructura que contiene los datos requeridos para que se jueguen las partidad
 struct GameMatch {
-    bool isPlayerOneTurn, isMatchOver = false;
+    bool isPlayerOneTurn;
     int playerOneTurns = 0, playerTwoTurns = 0;
     int gameMode, currentRound = 1, roundsQuantity;
     int playerOnePoints = 0, playerTwoPoints = 0;

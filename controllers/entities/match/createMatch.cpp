@@ -1,4 +1,5 @@
 #include "../../../src/game/entities/match/createMatch.h"
+#include "../../../src/game/entities/match/playMatch.h"
 #include "../../../src/game/entities/structs.h"
 #include "../../../src/game/entities/pokemon/setData.h"
 #include "../../../src/enums/gameModes.h"
@@ -30,29 +31,3 @@ void createMatch(const int mode, int rounds) {
     }
     
 } 
-
-void play(Pokemon &playerOne, Pokemon &playertwo, GameMatch &match) {
-    cleanScreen();
-    cout << "⚔️ ¡Una nueva batalla Pokémon está por comenzar! ⚔️";
-    Sleep(2000);
-    cleanScreen();
-
-    switch(match.gameMode) {
-        case SINGLE_PLAYER:
-            setFirstTurn(match);
-            while (true) {
-                getCurrentTurn(match, playerOne, playertwo);
-                changeTurn(match);
-                freezeInput();
-                if(match.isMatchOver) break;
-            }
-            break;
-        case MULTI_PLAYER: 
-            while (true) {
-                if(match.isMatchOver) break;
-            }
-            break;
-        default: 
-            cout << "\nEl número ingresado no es válido";
-    }
-}

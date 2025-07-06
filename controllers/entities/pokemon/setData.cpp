@@ -33,7 +33,7 @@ Pokemon setCpuPlayer() {
     Pokemon cpuCharacter; //dato del tipo Pokemon que se retornará
     int randomSelectedPokemon;
 
-    cpuCharacter.coach = "Ninguno (Pokemon salvaje)";
+    cpuCharacter.coach = "(Sin entrenador)";
     randomSelectedPokemon = setCpuPokemon(cpuCharacter);
     cpuCharacter.type = setPokemonType(randomSelectedPokemon);
     setAdittionalData(cpuCharacter);

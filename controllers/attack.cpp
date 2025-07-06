@@ -2,6 +2,15 @@
 #include "../src/enums/pokemonAttacks.h"
 #include "../src/game/entities/structs.h"
 
+void showAttacks(Pokemon &pokemon, GameMatch &match) {
+    for (int i = 0; i < 3; i++) {
+        if (i == 2 && (match.playerOneTurns % 3 != 0 || match.playerTwoTurns % 3 != 0)) break;
+        else {
+            cout << "\n[" << i << "]- " << pokemon.attacks[i];
+        }
+    }
+}
+
 void performAttack(Pokemon &attacker, Pokemon &defender, int attackType, int attackerTurn) {
     int finalDamage = 0;
     bool isAttackDone = false;
@@ -39,7 +48,7 @@ void performAttack(Pokemon &attacker, Pokemon &defender, int attackType, int att
     }
 }
 
-void attackTurn(Pokemon &playerOne , Pokemon &playerTwo, GameMatch &match) {
+//void attackTurn(Pokemon &playerOne , Pokemon &playerTwo, GameMatch &match) {
 
     /*while (playerOne.health > 0 && playerTwo.health > 0) {
         if match.IsPlayerOneTurn {
@@ -58,41 +67,36 @@ void attackTurn(Pokemon &playerOne , Pokemon &playerTwo, GameMatch &match) {
         if (playerOne.health <= 0) break;        
         }
     } */
-    int turn = 1;
-        while (playerOne.health > 0 && playerTwo.health > 0) {
-        //Mientras que la vida de los pokemons sea mayor a 0 se seguira haciendo este ciclo.
-        int attackChoice;
-        cout << "\nTurno " << turn << ":\n";
+    // int turn = 1;
+    //     while (playerOne.health > 0 && playerTwo.health > 0) {
+    //     //Mientras que la vida de los pokemons sea mayor a 0 se seguira haciendo este ciclo.
+    //     int attackChoice;
+    //     cout << "\nTurno " << turn << ":\n";
 
-        // Turno del jugador 1
-        cout << playerOne.coach << " (" << playerOne.name << "), elige tu ataque:\n";
-        cout << "1. Ataque Normal\n2. Ataque Especial\n";
-        cin >> attackChoice;
-        performAttack(playerOne, playerTwo, attackChoice, match.playerOneTurns);
-        if (playerTwo.health <= 0) break; //Si la vida del jugador 2 es 0 o menor se termina la batalla
+    //     // Turno del jugador 1
+    //     cout << playerOne.coach << " (" << playerOne.name << "), elige tu ataque:\n";
+    //     cout << "1. Ataque Normal\n2. Ataque Especial\n";
+    //     cin >> attackChoice;
+    //     performAttack(playerOne, playerTwo, attackChoice, match.playerOneTurns);
+    //     if (playerTwo.health <= 0) break; //Si la vida del jugador 2 es 0 o menor se termina la batalla
 
-        // Turno del jugador 2
-        cout << playerTwo.coach << " (" << playerTwo.name << "), elige tu ataque:\n";
-        cout << "1. Ataque Normal\n2. Ataque Especial\n";
-        cin >> attackChoice;
-        performAttack(playerTwo, playerOne, attackChoice, match.playerTwoTurns);
-        if (playerOne.health <= 0) break; //Si la vida del jugador 1 es 0 o menor se termina la batalla
+    //     // Turno del jugador 2
+    //     cout << playerTwo.coach << " (" << playerTwo.name << "), elige tu ataque:\n";
+    //     cout << "1. Ataque Normal\n2. Ataque Especial\n";
+    //     cin >> attackChoice;
+    //     performAttack(playerTwo, playerOne, attackChoice, match.playerTwoTurns);
+    //     if (playerOne.health <= 0) break; //Si la vida del jugador 1 es 0 o menor se termina la batalla
 
-        turn++;
-    }
+    //     turn++;
+    // }
 
-    if (playerOne.health > 0) //Mensaje de que jugador gana la batalla.
-        cout << "\n¡" << playerOne.coach << " gana la batalla!\n";
-    else
-        cout << "\n¡" << playerTwo.coach << " gana la batalla!\n";
-}
+    // if (playerOne.health > 0) //Mensaje de que jugador gana la batalla.
+    //     cout << "\n¡" << playerOne.coach << " gana la batalla!\n";
+    // else
+    //     cout << "\n¡" << playerTwo.coach << " gana la batalla!\n";
 
-void showAttacks(Pokemon &pokemon, GameMatch &match) {
-    for (int i = 0; i < 3; i++) {
-        if (i == 2 && (match.playerOneTurns % 3 != 0 || match.playerTwoTurns % 3 != 0)) break;
-        else {
-            cout << "\n[" << i << "]- " << pokemon.attacks[i];
-        }
-    }
-}
+
+//}
+
+
 

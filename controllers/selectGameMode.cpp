@@ -1,6 +1,5 @@
-#include <iostream>
-#include <limits>
 #include "../src/game/selectGameMode.h"
+#include "../utils/base.h"
 
 using namespace std;
 
@@ -58,6 +57,7 @@ int selectRounds() {
     } while (rounds != 3 && rounds != 5);
 
     return rounds;
+}
     // Determines and displays the match winner
 void showMatchWinner(int player1Wins, int player2Wins) {
     cout << "\n============== MATCH RESULT ==============" << endl;
@@ -73,5 +73,5 @@ void showMatchWinner(int player1Wins, int player2Wins) {
     cout << "===========================================" << endl;
 }
 
-}
+
 
