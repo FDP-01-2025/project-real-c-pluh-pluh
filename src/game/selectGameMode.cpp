@@ -28,11 +28,11 @@ int selectGameMode() {
     int option;
 
     do {
-        cout << "Select a game mode (1 or 2): ";
+        cout << "Selecciona el modo de juego (1 o 2): ";
         cin >> option;
 
         if (cin.fail() || (option != 1 && option != 2)) {
-            cout << "Invalid option. Please enter 1 or 2." << endl;
+            cout << "Opción inválida. Por favor, ingresa 1 o 2." << endl;
             cin.clear();
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
         }
