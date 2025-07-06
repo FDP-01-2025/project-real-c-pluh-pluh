@@ -74,31 +74,46 @@ void setAdittionalData(Pokemon &character) {
             character.health = 90;
             character.damage = 32;
             character.typeOfWeakness = ELECTRIC;
+            character.attacks[0] = "Pistola de agua";
+            character.attacks[1] = "Burbuja";
+            character.attacks[2] = "Oleada marina";            
             break;
         case FIRE:
             character.baseHealth = 86;
             character.health = 86;
             character.damage = 34;
             character.typeOfWeakness = WATER;
-            break;
+            character.attacks[0] = "Ascuas";
+            character.attacks[1] = "Cola ígnea";
+            character.attacks[2] = "Tormenta de llamas";            
+            break;        
         case GRASS:
             character.baseHealth = 115;
             character.health = 115;
             character.damage = 26;
             character.typeOfWeakness = FIRE;
-            break;
+            character.attacks[0] = "Látigo cepa";
+            character.attacks[1] = "Hoja navaja";
+            character.attacks[2] = "Flor espiritual";            
+            break;        
         case ELECTRIC:
             character.baseHealth = 130;
             character.health = 130;
             character.damage = 20;
             character.typeOfWeakness = ROCK;
-            break;
+            character.attacks[0] = "Impactrueno";
+            character.attacks[1] = "Chispa";
+            character.attacks[2] = "Tormenta eléctrica";            
+            break;        
         case ROCK:
             character.baseHealth = 105;
             character.health = 105;
             character.damage = 30;
             character.typeOfWeakness = GRASS;
-            break;
+            character.attacks[0] = "Lanzarocas";
+            character.attacks[1] = "Golpe pedregoso";
+            character.attacks[2] = "Ruina sísmica";            
+            break;        
         default:
             cout << "\n Tipo de Pokémon no válido para salud.";
             break;
