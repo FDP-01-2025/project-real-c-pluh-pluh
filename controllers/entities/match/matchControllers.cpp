@@ -8,10 +8,11 @@ void setFirstTurn(GameMatch &match) {
     int randomNumber;
     if (match.currentRound == 1) {
          randomNumber = getRandomNumber(1,2);
-        if (randomNumber == 1) match.isPlayerOneTurn = true;
-        else match.isPlayerOneTurn = false;
+        if (randomNumber == 1) { match.isPlayerOneTurn = true; match.playerOneTurns++; }
+        else { match.isPlayerOneTurn = false; match.playerTwoTurns++; }
     }
 }
+
 
 //indica de quién es el turno
 void getCurrentTurn(const GameMatch &match, const Pokemon playerOne, const Pokemon &playerTwo) {
@@ -27,6 +28,8 @@ void getCurrentTurn(const GameMatch &match, const Pokemon playerOne, const Pokem
 //realiza el cambio de turno
 void changeTurn(GameMatch &match) {
     match.isPlayerOneTurn = !match.isPlayerOneTurn;
+    if (match.isPlayerOneTurn) match.playerOneTurns++;
+    else match.playerTwoTurns++;
 }
 
 //finalizar ronda

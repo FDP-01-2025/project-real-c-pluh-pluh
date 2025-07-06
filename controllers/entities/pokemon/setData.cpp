@@ -12,7 +12,7 @@ void printData(Pokemon &player); //función para imprimir datos (como logs)
 Pokemon setPlayerData() {
     //definición de variables
     Pokemon player; //dato del tipo Pokemon que se retornará
-    string pokemonName;
+    string pokemonName; 
     int selectedPokemon;
 
     cout << "\n Dinos tu nombre entrenador: ";
@@ -22,7 +22,7 @@ Pokemon setPlayerData() {
     selectedPokemon = selectPokemon(player);
     player.type = setPokemonType(selectedPokemon);
     setAdittionalData(player);
-    printData(player);
+    // printData(player);
 
     return player;
 } 
@@ -40,7 +40,7 @@ Pokemon setCpuPlayer() {
     printData(cpuCharacter);
 
     return cpuCharacter;
-}
+} 
 
 void printData(Pokemon &player) {
     cout << "\n\n=== Pokemon Stats ===" << endl;
@@ -94,7 +94,7 @@ void setAdittionalData(Pokemon &character) {
             character.typeOfWeakness = FIRE;
             character.attacks[0] = "Látigo cepa";
             character.attacks[1] = "Hoja navaja";
-            character.attacks[2] = "Flor espiritual";            
+            character.attacks[2] = "Eco verde";            
             break;        
         case ELECTRIC:
             character.baseHealth = 130;

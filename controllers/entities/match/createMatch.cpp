@@ -29,7 +29,7 @@ void createMatch(const int mode, int rounds) {
         play(player, playerTwo, match);
     }
     
-}
+} 
 
 void play(Pokemon &playerOne, Pokemon &playertwo, GameMatch &match) {
     cleanScreen();

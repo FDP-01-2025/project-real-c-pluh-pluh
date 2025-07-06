@@ -2,22 +2,34 @@
 #include "../src/enums/pokemonAttacks.h"
 #include "../src/game/entities/structs.h"
 
-void performAttack(Pokemon &attacker, Pokemon &defender, int attackType) {
+void performAttack(Pokemon &attacker, Pokemon &defender, int attackType, int attackerTurn) {
     int finalDamage = 0;
-    switch (attackType) { //Casos para los diferentes tipos de ataques.
-        case NORMAL_ATTACK: //Primer caso en el que elija ataque normal.
-            finalDamage = attacker.damage;
-            break;
-        case SPECIAL_ATTACK: //Segundo caso en el que elija ataque especial.
-            finalDamage = attacker.damage + 10; // Se añade 10 de daño al daño del ataque especial.
-            if (defender.typeOfWeakness == attacker.type) {
-                finalDamage += 10 ; // Si el tipo del atacante es débil al tipo del defensor, el daño aumenta por 10 puntos de daño.
-            }
-            break;
-        default:
-            cout << "Tipo de Ataque invalido!\n"; //Si ingresa un valor invalido mandar mensaje de error.
-            return;
+    bool isAttackDone = false;
+
+    while (isAttackDone) {
+        switch (attackType) { //Casos para los diferentes tipos de ataques.
+            case NORMAL_ATTACK: //Primer caso en el que elija ataque normal.
+                finalDamage = attacker.damage;
+                isAttackDone = true;
+                break;
+            case SPECIAL_ATTACK: //Segundo caso en el que elija ataque especial.    
+                if (attackerTurn % 3 != 0) {
+                    cout << "\nEl ataque especial solo está disponible cada 3 turnos";
+                    break;
+                }
+
+                finalDamage = attacker.damage + 10; // Se añade 10 de daño al daño del ataque especial.
+                if (defender.typeOfWeakness == attacker.type) {
+                    finalDamage += 10 ; // Si el tipo del atacante es débil al tipo del defensor, el daño aumenta por 10 puntos de daño.
+                }
+                isAttackDone = true;
+                break;
+            default:
+                cout << "Tipo de Ataque invalido!\n"; //Si ingresa un valor invalido mandar mensaje de error.
+                return;
+        }
     }
+
     defender.health -= finalDamage; //Restar el daño final a la vida del defensor.
     
     if (defender.health <= 0) { 
@@ -27,7 +39,7 @@ void performAttack(Pokemon &attacker, Pokemon &defender, int attackType) {
     }
 }
 
-void attackTurn(Pokemon &playerOne , Pokemon &playerTwo) {
+void attackTurn(Pokemon &playerOne , Pokemon &playerTwo, GameMatch &match) {
 
     /*while (playerOne.health > 0 && playerTwo.health > 0) {
         if match.IsPlayerOneTurn {
@@ -56,14 +68,14 @@ void attackTurn(Pokemon &playerOne , Pokemon &playerTwo) {
         cout << playerOne.coach << " (" << playerOne.name << "), elige tu ataque:\n";
         cout << "1. Ataque Normal\n2. Ataque Especial\n";
         cin >> attackChoice;
-        performAttack(playerOne, playerTwo, attackChoice);
+        performAttack(playerOne, playerTwo, attackChoice, match.playerOneTurns);
         if (playerTwo.health <= 0) break; //Si la vida del jugador 2 es 0 o menor se termina la batalla
 
         // Turno del jugador 2
         cout << playerTwo.coach << " (" << playerTwo.name << "), elige tu ataque:\n";
         cout << "1. Ataque Normal\n2. Ataque Especial\n";
         cin >> attackChoice;
-        performAttack(playerTwo, playerOne, attackChoice);
+        performAttack(playerTwo, playerOne, attackChoice, match.playerTwoTurns);
         if (playerOne.health <= 0) break; //Si la vida del jugador 1 es 0 o menor se termina la batalla
 
         turn++;
@@ -73,5 +85,14 @@ void attackTurn(Pokemon &playerOne , Pokemon &playerTwo) {
         cout << "\n¡" << playerOne.coach << " gana la batalla!\n";
     else
         cout << "\n¡" << playerTwo.coach << " gana la batalla!\n";
+}
+
+void showAttacks(Pokemon &pokemon, GameMatch &match) {
+    for (int i = 0; i < 3; i++) {
+        if (i == 2 && (match.playerOneTurns % 3 != 0 || match.playerTwoTurns % 3 != 0)) break;
+        else {
+            cout << "\n[" << i << "]- " << pokemon.attacks[i];
+        }
+    }
 }
 
