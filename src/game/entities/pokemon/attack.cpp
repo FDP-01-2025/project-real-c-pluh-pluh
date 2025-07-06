@@ -1,6 +1,7 @@
 #include "../../../utils/base.h"
 #include "../../../enums/pokemonAttacks.h"
 #include "../../../game/entities/structs.h"
+#include "../match/matchControllers.h"
 
 void showAttacks(Pokemon &pokemon, GameMatch &match) {
     for (int i = 0; i < 3; i++) {
@@ -53,53 +54,36 @@ void performAttack(Pokemon &attacker, Pokemon &defender, int attackType, int att
     }
 }
 
-//void attackTurn(Pokemon &playerOne , Pokemon &playerTwo, GameMatch &match) {
+void attackTurn(Pokemon &playerOne , Pokemon &playerTwo, GameMatch &match, bool cpuMode) {
 
-    /*=while (playerOne.health > 0 && playerTwo.health > 0) {
-        if match.IsPlayerOneTurn {
-        cout << playerOne.coach << " (" << playerOne.name << "), elige tu ataque:\n";
-        showAttacks(playerOne, match)
-        cin >> attackChoice;
-        performAttack(playerOne, playerTwo, attackChoice);
-        if (playerTwo.health <= 0) break;
-        }   else {
-        cout << playerOne.coach << " (" << playerOne.name << "), elige tu ataque:\n";
-        showAttacks(playerTwo, match)
-        cin >> attackChoice;
-        performAttack(playerTwo, playerOne, attackChoice);
-        if (playerOne.health <= 0) break;        
+    while (playerOne.health > 0 && playerTwo.health > 0) { //Mientras que las vidas de los dos sean mayor a 0 entonces hacer lo siguiente.
+        int attackChoice;
+        if (match.isPlayerOneTurn) { //Verificar si es turno del jugador 1
+            cout << playerOne.coach << " (" << playerOne.name << "), elige tu ataque:\n";
+            showAttacks(playerOne, match); //Usar la funcion para mostrar los respectivos ataques del pokemon
+            attackChoice = askForInteger();
+            performAttack(playerOne, playerTwo, attackChoice, match.playerOneTurns); //Llamar a la funcion para llevar a cabo el ataque
+            if (playerTwo.health <= 0) break; // Terminar si el jugador 2 ya no tiene vida
+        
+        }   else { //Verificar si es turno del jugador 2
+            cout << playerTwo.coach << " (" << playerTwo.name << "), elige tu ataque:\n";
+            if (cpuMode) {
+                attackChoice = getRandomNumber(0, 2);
+                cout << "CPU eligio: [" << attackChoice << "]" << playerTwo.attacks[attackChoice] << endl;
+            } else {
+                showAttacks(playerTwo, match); //Usar la funcion para mostrar los respectivos ataques del pokemon
+                attackChoice = askForInteger(); 
+                performAttack(playerTwo, playerOne, attackChoice, match.playerTwoTurns); //Llamar a la funcion para llevar a cabo el ataque
+                if (playerOne.health <= 0) break; // Terminar si el jugador 1 ya no tiene vida
+            }
         }
-    } */
-    // int turn = 1;
-    //     while (playerOne.health > 0 && playerTwo.health > 0) {
-    //     //Mientras que la vida de los pokemons sea mayor a 0 se seguira haciendo este ciclo.
-    //     int attackChoice;
-    //     cout << "\nTurno " << turn << ":\n";
-
-    //     // Turno del jugador 1
-    //     cout << playerOne.coach << " (" << playerOne.name << "), elige tu ataque:\n";
-    //     cout << "1. Ataque Normal\n2. Ataque Especial\n";
-    //     cin >> attackChoice;
-    //     performAttack(playerOne, playerTwo, attackChoice, match.playerOneTurns);
-    //     if (playerTwo.health <= 0) break; //Si la vida del jugador 2 es 0 o menor se termina la batalla
-
-    //     // Turno del jugador 2
-    //     cout << playerTwo.coach << " (" << playerTwo.name << "), elige tu ataque:\n";
-    //     cout << "1. Ataque Normal\n2. Ataque Especial\n";
-    //     cin >> attackChoice;
-    //     performAttack(playerTwo, playerOne, attackChoice, match.playerTwoTurns);
-    //     if (playerOne.health <= 0) break; //Si la vida del jugador 1 es 0 o menor se termina la batalla
-
-    //     turn++;
-    // }
-
-    // if (playerOne.health > 0) //Mensaje de que jugador gana la batalla.
-    //     cout << "\n¡" << playerOne.coach << " gana la batalla!\n";
-    // else
-    //     cout << "\n¡" << playerTwo.coach << " gana la batalla!\n";
-
-
-//}
-
+        changeTurn(match);
+        finishRound(match, playerOne);
+    } 
+    if (playerOne.health > 0)
+        cout << "\n¡" << playerOne.coach << " gana la ronda!\n";
+    else
+        cout << "\n¡" << playerTwo.coach << " gana la ronda!\n";
+}
 
 
