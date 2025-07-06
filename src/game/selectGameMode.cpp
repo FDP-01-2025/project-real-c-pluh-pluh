@@ -7,7 +7,7 @@ using namespace std;
 void showMainMenu() 
 {
     cleanScreen(); // Clear the console
-    cout << R"(  __  __           _             _          _                        
+    cout << R"(      __  __           _             _          _                        
                     |  \/  | ___   __| | ___     __| | ___    (_)_   _  ___  __ _  ___  
                     | |\/| |/ _ \ / _` |/ _ \   / _` |/ _ \   | | | | |/ _ \/ _` |/ _ \ 
                     | |  | | (_) | (_| | (_) | | (_| |  __/   | | |_| |  __/ (_| | (_) |
@@ -15,12 +15,12 @@ void showMainMenu()
                                                            |__/            |___/           
     )" << endl;
 
-
+// Menu layout
     cout << "╔══════════════════════════════════════════════╗" << endl;
-    cout << "║               MAIN MENU                     ║" << endl;
+    cout << "║               MENU PRINCIPAL                 ║" << endl;
     cout << "╠══════════════════════════════════════════════╣" << endl;
-    cout << "║  1. Single Player Mode                      ║" << endl;
-    cout << "║  2. Two Player Mode                         ║" << endl;
+    cout << "║  1. Un jugador                               ║" << endl;
+    cout << "║  2. Dos jugadores                            ║" << endl;
     cout << "╚══════════════════════════════════════════════╝" << endl;
 }
 // Prompts the user to select a game mode (1 or 2 players)
@@ -28,11 +28,12 @@ int selectGameMode() {
     int option;
 
     do {
-        cout << "Select a game mode (1 or 2): ";
+        cout << "Selecciona el modo de juego (1 o 2): ";
         cin >> option;
+// If the user types something wrong, show an error and ask again
 
         if (cin.fail() || (option != 1 && option != 2)) {
-            cout << "Invalid option. Please enter 1 or 2." << endl;
+            cout << "Opción inválida. Por favor, ingresa 1 o 2." << endl;
             cin.clear();
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
         }
@@ -46,11 +47,11 @@ int selectRounds() {
     int rounds;
 
     do {
-        cout << "Select number of rounds (3 or 5): ";
+        cout << "¿Cuántas rondas deseas jugar? (3 o 5): ";
         cin >> rounds;
 
         if (cin.fail() || (rounds != 3 && rounds != 5)) {
-            cout << "Invalid input. Please enter 3 or 5." << endl;
+            cout << "Entrada inválida. Por favor, elige 3 o 5 rondas."  << endl;
             cin.clear();
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
         }
@@ -60,14 +61,16 @@ int selectRounds() {
 }
     // Determines and displays the match winner
 void showMatchWinner(int player1Wins, int player2Wins) {
-    cout << "\n============== MATCH RESULT ==============" << endl;
+    cout << "\n============== RESULTADO DE LA PARTIDA ==============" << endl;
+
+    // Show who won more rounds at the end of the match
 
     if (player1Wins > player2Wins) {
-        cout << "🎉 Player 1 wins the match!" << endl;
+        cout << "🎉 ¡El Jugador 1 gana la partida!" << endl;
     } else if (player2Wins > player1Wins) {
-        cout << "🎉 Player 2 wins the match!" << endl;
+        cout << "🎉 ¡El Jugador 2 gana la partida!" << endl;
     } else {
-        cout << "🤝 It's a draw!" << endl;
+        cout << "🤝 ¡Empate!" << endl;
     }
 
     cout << "===========================================" << endl;
