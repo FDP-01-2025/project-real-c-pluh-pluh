@@ -74,3 +74,4 @@ void attackTurn(Pokemon &playerOne , Pokemon &playerTwo) {
     else
         cout << "\n¡" << playerTwo.coach << " gana la batalla!\n";
 }
+
