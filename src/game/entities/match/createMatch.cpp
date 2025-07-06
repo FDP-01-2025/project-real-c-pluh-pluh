@@ -1,9 +1,9 @@
-#include "../../../src/game/entities/match/createMatch.h"
-#include "../../../src/game/entities/match/playMatch.h"
-#include "../../../src/game/entities/structs.h"
-#include "../../../src/game/entities/pokemon/setData.h"
-#include "../../../src/enums/gameModes.h"
-#include "../../../src/game/entities/match/matchControllers.h"
+#include "./createMatch.h"
+#include "./playMatch.h"
+#include "../structs.h"
+#include "../pokemon/setData.h"
+#include "../../../enums/gameModes.h"
+#include "./matchControllers.h"
 
 //declaración función para jugar
 void play(Pokemon &playerOne, Pokemon &playertwo, GameMatch &match);

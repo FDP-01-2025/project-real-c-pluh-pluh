@@ -1,7 +1,7 @@
-#include "../../../src/game/entities/match/playMatch.h"
-#include "../../../src/game/entities/match/matchControllers.h"
-#include "../../../src/enums/gameModes.h"
-#include "../../../src/game/entities/pokemon/attack.h"
+#include "./playMatch.h"
+#include "./matchControllers.h"
+#include "../../../enums/gameModes.h"
+#include "../pokemon/attack.h"
 
 void play(Pokemon &playerOne, Pokemon &playertwo, GameMatch &match) {
     cleanScreen();
@@ -17,7 +17,7 @@ void play(Pokemon &playerOne, Pokemon &playertwo, GameMatch &match) {
                 //bucle interno para manejar ronda
                 while (playerOne.health > 0 || playertwo.health > 0) {
                     getCurrentTurn(match, playerOne, playertwo);
-                    attackTurn(playerOne, playertwo, match);
+                    // attackTurn(playerOne, playertwo, match);
                     changeTurn(match);
                 }
                 finishRound(match, playerOne);

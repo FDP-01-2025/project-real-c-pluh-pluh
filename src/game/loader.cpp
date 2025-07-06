@@ -1,5 +1,5 @@
 #include "../utils/base.h"
-#include "../src/game/loader.h"
+#include "./loader.h"
 #include "../utils/printCentered.h"
 
 //función que trabaja con medidas de la consola para mostrar el ascii art de forma centrada

@@ -1,7 +1,7 @@
-#include "../../src/game/singleMode/singlePlayerMode.h"
-#include "../../src/game/entities/match/createMatch.h"
-#include "../../src/game/singleMode/showMap.h"
-#include "../../src/enums/gameModes.h"
+#include "./singlePlayerMode.h"
+#include "../entities/match/createMatch.h"
+#include "./showMap.h"
+#include "../../enums/gameModes.h"
 
 //función principal para el modo de juego solitario
 //recibe la cantidad de rondas desde game.cpp para pasarle ese dato a createMatch()

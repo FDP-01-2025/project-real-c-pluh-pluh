@@ -1,7 +1,7 @@
 #include "../../../utils/base.h"
-#include "../../../src/game/entities/structs.h"
-#include "../../../src/enums/pokemonTypes.h"
-#include "../../../src/game/entities/pokemon/selectPokemon.h"
+#include "../structs.h"
+#include "../../../enums/pokemonTypes.h"
+#include "./selectPokemon.h"
 
 //declaración de funciones a usar
 int setPokemonType(int selectedPokemon); //función que define el tipo de pokemon

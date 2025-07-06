@@ -1,7 +1,7 @@
 #ifndef ATTACK_H
 #define ATTACK_H
 
-#include "../../../../utils/base.h" //Incluir el "Header" base.h para las funciones de utilidad.
+#include "../../../utils/base.h" //Incluir el "Header" base.h para las funciones de utilidad.
 #include "../structs.h" // Incluir el "Header" de estructuras para las definiciones de Pokémon.
 
 void attackTurn(Pokemon &playerOne , Pokemon &playerTwo, GameMatch &match); // La función de ataque que toma dos Usuarios como parámetros y la partida.

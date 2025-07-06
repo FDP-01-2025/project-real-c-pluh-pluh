@@ -1,7 +1,7 @@
 #ifndef STRUCTS_H
 #define STRUCTS_H
 
-#include "../../../utils/base.h"
+#include "../../utils/base.h"
 
 //estructura que contiene los datos a utilizar para los jugadores
 struct Pokemon {

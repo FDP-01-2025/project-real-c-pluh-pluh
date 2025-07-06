@@ -1,11 +1,10 @@
 #include "../utils/base.h"
-#include "../src/game/loader.h"
-// #include "../src/game/testMatch.h"
-#include "../src/game/entities/structs.h"
-#include "../src/game/entities/pokemon/setData.h"
-#include "../src/game/singleMode/singlePlayerMode.h"
-#include "../src/game/selectGameMode.h"
-#include "../src/enums/gameModes.h"
+#include "loader.h"
+#include "./entities/structs.h"
+#include "../enums/gameModes.h"
+#include "./entities/pokemon/setData.h"
+#include "./selectGameMode.h"
+#include "./singleMode/singlePlayerMode.h"
 
 //función principal del juego que manejará toda la lógica
 void game() {

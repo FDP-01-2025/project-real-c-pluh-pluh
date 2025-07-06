@@ -1,7 +1,7 @@
 #ifndef MATCH_H
 #define MATCH_H
 
-#include "../../../../utils/base.h"
+#include "../../../utils/base.h"
 #include "../structs.h"
 
 void setFirstTurn(GameMatch &match); // función que establece el primer turno

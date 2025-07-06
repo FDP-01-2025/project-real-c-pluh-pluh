@@ -1,7 +1,7 @@
 #include "../../../utils/base.h"
-#include "../../../src/game/entities/structs.h"
-#include "../../../src/game/entities/match/matchControllers.h"
-#include "../../../src/enums/gameModes.h"
+#include "../structs.h"
+#include "./matchControllers.h"
+#include "../../../enums/gameModes.h"
 
 //define el turno de jugador si la partida empieza
 void setFirstTurn(GameMatch &match) {

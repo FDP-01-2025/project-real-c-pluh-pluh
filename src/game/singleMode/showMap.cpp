@@ -22,7 +22,7 @@
 // }
 
 
-#include "../../src/game/singleMode/showMap.h"
+#include "./showMap.h"
 #include "../../utils/base.h"
 #include "../../utils/printCentered.h"
 

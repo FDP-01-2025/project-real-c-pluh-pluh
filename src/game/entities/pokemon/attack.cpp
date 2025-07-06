@@ -1,6 +1,6 @@
-#include "../utils/base.h"
-#include "../src/enums/pokemonAttacks.h"
-#include "../src/game/entities/structs.h"
+#include "../../../utils/base.h"
+#include "../../../enums/pokemonAttacks.h"
+#include "../../../game/entities/structs.h"
 
 void showAttacks(Pokemon &pokemon, GameMatch &match) {
     for (int i = 0; i < 3; i++) {

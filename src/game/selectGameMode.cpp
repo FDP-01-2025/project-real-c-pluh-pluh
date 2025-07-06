@@ -1,4 +1,4 @@
-#include "../src/game/selectGameMode.h"
+#include "./selectGameMode.h"
 #include "../utils/base.h"
 
 using namespace std;

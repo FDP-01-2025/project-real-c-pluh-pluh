@@ -1,5 +1,5 @@
 # Ignorar archivos de texto
-*.txt
+compile.txt
 
 # Ignorar configuración de VSCode
 .vscode/
