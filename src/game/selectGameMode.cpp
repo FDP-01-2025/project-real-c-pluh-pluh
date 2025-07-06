@@ -7,7 +7,7 @@ using namespace std;
 void showMainMenu() 
 {
     cleanScreen(); // Clear the console
-    cout << R"(  __  __           _             _          _                        
+    cout << R"(      __  __           _             _          _                        
                     |  \/  | ___   __| | ___     __| | ___    (_)_   _  ___  __ _  ___  
                     | |\/| |/ _ \ / _` |/ _ \   / _` |/ _ \   | | | | |/ _ \/ _` |/ _ \ 
                     | |  | | (_) | (_| | (_) | | (_| |  __/   | | |_| |  __/ (_| | (_) |
@@ -15,7 +15,7 @@ void showMainMenu()
                                                            |__/            |___/           
     )" << endl;
 
-
+// Menu layout
     cout << "╔══════════════════════════════════════════════╗" << endl;
     cout << "║               MENU PRINCIPAL                 ║" << endl;
     cout << "╠══════════════════════════════════════════════╣" << endl;
@@ -30,6 +30,7 @@ int selectGameMode() {
     do {
         cout << "Selecciona el modo de juego (1 o 2): ";
         cin >> option;
+// If the user types something wrong, show an error and ask again
 
         if (cin.fail() || (option != 1 && option != 2)) {
             cout << "Opción inválida. Por favor, ingresa 1 o 2." << endl;
@@ -61,6 +62,8 @@ int selectRounds() {
     // Determines and displays the match winner
 void showMatchWinner(int player1Wins, int player2Wins) {
     cout << "\n============== RESULTADO DE LA PARTIDA ==============" << endl;
+
+    // Show who won more rounds at the end of the match
 
     if (player1Wins > player2Wins) {
         cout << "🎉 ¡El Jugador 1 gana la partida!" << endl;
