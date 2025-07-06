@@ -52,16 +52,16 @@ void performAttack(Pokemon &attacker, Pokemon &defender, int attackType, int att
 
     /*while (playerOne.health > 0 && playerTwo.health > 0) {
         if match.IsPlayerOneTurn {
-        cout << playerOne.name << " elige tu tipo de ataque: \n"
-        cout << "1. Ataque Normal: " << playerOne.damage << "\n" << ;
-        cout << "2. Ataque Especial: " << player.damage << "+ 10\n";
+        cout << playerOne.coach << " (" << playerOne.name << "), elige tu ataque:\n";
+        cout << "1. Ataque Normal: " << playerOne.attacks << "\n" << ;
+        cout << "2. Ataque Especial: " << playerOne.attacks << "+ 10\n";
         cin >> attackChoice;
         performAttack(playerOne, playerTwo, attackChoice);
         if (playerTwo.health <= 0) break;
         }   else {
-        cout << PlayerTwo.name << " elige tu tipo de ataque: \n"
-        cout << "1. Ataque Normal: " << playerTwo.damage << "\n" << ;
-        cout << "2. Ataque Especial: " << player.damage << "+ 10\n";
+        cout << playerOne.coach << " (" << playerOne.name << "), elige tu ataque:\n";
+        cout << "1. Ataque Normal: " << playerTwo.attacks << "\n" << ;
+        cout << "2. Ataque Especial: " << playerTwo.attacks << "+ 10\n";
         cin >> attackChoice;
         performAttack(playerTwo, playerOne, attackChoice);
         if (playerOne.health <= 0) break;        
