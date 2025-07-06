@@ -6,7 +6,12 @@ void showAttacks(Pokemon &pokemon, GameMatch &match) {
     for (int i = 0; i < 3; i++) {
         if (i == 2 && (match.playerOneTurns % 3 != 0 || match.playerTwoTurns % 3 != 0)) break;
         else {
-            cout << "\n[" << i << "]- " << pokemon.attacks[i];
+            cout << "\n[" << i << "]- " << pokemon.attacks[i] << ": ";
+            if (i == 2) {
+                cout << (pokemon.damage + 10) << " de dano";
+            } else {
+                cout << pokemon.damage << " de dano";
+            }
         }
     }
 }
@@ -50,18 +55,16 @@ void performAttack(Pokemon &attacker, Pokemon &defender, int attackType, int att
 
 //void attackTurn(Pokemon &playerOne , Pokemon &playerTwo, GameMatch &match) {
 
-    /*while (playerOne.health > 0 && playerTwo.health > 0) {
+    /*=while (playerOne.health > 0 && playerTwo.health > 0) {
         if match.IsPlayerOneTurn {
         cout << playerOne.coach << " (" << playerOne.name << "), elige tu ataque:\n";
-        cout << "1. Ataque Normal: " << playerOne.attacks << "\n" << ;
-        cout << "2. Ataque Especial: " << playerOne.attacks << "+ 10\n";
+        showAttacks(playerOne, match)
         cin >> attackChoice;
         performAttack(playerOne, playerTwo, attackChoice);
         if (playerTwo.health <= 0) break;
         }   else {
         cout << playerOne.coach << " (" << playerOne.name << "), elige tu ataque:\n";
-        cout << "1. Ataque Normal: " << playerTwo.attacks << "\n" << ;
-        cout << "2. Ataque Especial: " << playerTwo.attacks << "+ 10\n";
+        showAttacks(playerTwo, match)
         cin >> attackChoice;
         performAttack(playerTwo, playerOne, attackChoice);
         if (playerOne.health <= 0) break;        
