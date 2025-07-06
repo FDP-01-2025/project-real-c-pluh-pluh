@@ -1,6 +1,6 @@
-#include "../../../../utils/base.h"
-#include "../../../../src/enums/pokemonAttacks.h"
-#include "../structs.h"
+#include "../utils/base.h"
+#include "../src/enums/pokemonAttacks.h"
+#include "../src/game/entities/structs.h"
 
 void performAttack(Pokemon &attacker, Pokemon &defender, int attackType) {
     int finalDamage = 0;
@@ -28,9 +28,27 @@ void performAttack(Pokemon &attacker, Pokemon &defender, int attackType) {
 }
 
 void attackTurn(Pokemon &playerOne , Pokemon &playerTwo) {
+
+    /*while (playerOne.health > 0 && playerTwo.health > 0) {
+        if match.IsPlayerOneTurn {
+        cout << playerOne.name << " elige tu tipo de ataque: \n"
+        cout << "1. Ataque Normal: " << playerOne.damage << "\n" << ;
+        cout << "2. Ataque Especial: " << player.damage << "+ 10\n";
+        cin >> attackChoice;
+        performAttack(playerOne, playerTwo, attackChoice);
+        if (playerTwo.health <= 0) break;
+        }   else {
+        cout << PlayerTwo.name << " elige tu tipo de ataque: \n"
+        cout << "1. Ataque Normal: " << playerTwo.damage << "\n" << ;
+        cout << "2. Ataque Especial: " << player.damage << "+ 10\n";
+        cin >> attackChoice;
+        performAttack(playerTwo, playerOne, attackChoice);
+        if (playerOne.health <= 0) break;        
+        }
+    } */
     int turn = 1;
         while (playerOne.health > 0 && playerTwo.health > 0) {
-            //Mientras que la vida de los pokemons sea mayor a 0 se seguira haciendo este ciclo.
+        //Mientras que la vida de los pokemons sea mayor a 0 se seguira haciendo este ciclo.
         int attackChoice;
         cout << "\nTurno " << turn << ":\n";
 
