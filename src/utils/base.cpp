@@ -65,7 +65,7 @@ int askForInteger() {
             int parsedNumber = stoi(userInput);
             return parsedNumber;
         } else {
-            cout << "\nError: Por favor ingresa un número entero válido.\n";
+            cout << "\nError: Por favor ingresa un número entero válido: ";
         }
     }
 }
@@ -77,7 +77,7 @@ string askForString() {
     while (true) {
         cin >> userInput;
         if (containsOnlyLetters(userInput)) return userInput;
-        else cout << "\n Error: Por favor ingresa un dato válido: Se esperaba texto";
+        else cout << "\nError: Por favor ingresa un texto válido: ";
     }
 }
 

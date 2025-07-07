@@ -31,13 +31,17 @@ void changeTurn(GameMatch &match) {
 }
 
 //finalizar ronda
-void finishRound(GameMatch &match, Pokemon &playerOne) {
-    if (playerOne.health <= 0) {
-        match.playerTwoPoints++;
-    } else {
-        match.playerOnePoints++;
-    }
+void finishRound(GameMatch &match, Pokemon &playerOne, Pokemon &playerTwo) {
+    string roundWinner = playerOne.health == 0 ? playerTwo.name : playerOne.name;
+
+    if (playerOne.health == 0) match.playerTwoPoints++;
+     else match.playerOnePoints++;
+
+    cout << "🎉 El ganador de la ronda es: " << roundWinner << "🎉" << endl;
+
     match.currentRound++;
     match.playerOneTurns = 0;
     match.playerTwoTurns = 0;
+    playerOne.health = playerOne.baseHealth;
+    playerTwo.health = playerTwo.baseHealth;
 }

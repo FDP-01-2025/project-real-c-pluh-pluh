@@ -13,19 +13,36 @@ void play(Pokemon &playerOne, Pokemon &playertwo, GameMatch &match) {
         case SINGLE_PLAYER:
             //bucle externo para manejar las rondas de la partida
             for (int i = 1; i <= match.roundsQuantity; i++) {
+                cout << "Ronda: " << i << endl;
+                Sleep(1500);
                 setFirstTurn(match);
                 //bucle interno para manejar ronda
-                while (playerOne.health > 0 || playertwo.health > 0) {
+                while (playerOne.health > 0 && playertwo.health > 0) {
                     getCurrentTurn(match, playerOne, playertwo);
-                    // attackTurn(playerOne, playertwo, match);
+                    attackTurn(playerOne, playertwo, match);
                     changeTurn(match);
                 }
-                finishRound(match, playerOne);
+                finishRound(match, playerOne, playertwo);
+                Sleep(2000);
+                cleanScreen();
             }
             break;
 
         case MULTI_PLAYER: 
-            while (playerOne.health > 0 || playertwo.health > 0) {
+            //bucle externo para manejar las rondas de la partida
+            for (int i = 1; i <= match.roundsQuantity; i++) {
+                cout << "Ronda: " << i << endl;
+                Sleep(1500);
+                setFirstTurn(match);
+                //bucle interno para manejar ronda
+                while (playerOne.health > 0 && playertwo.health > 0) {
+                    getCurrentTurn(match, playerOne, playertwo);
+                    attackTurn(playerOne, playertwo, match);
+                    changeTurn(match);
+                }
+                finishRound(match, playerOne, playertwo);
+                Sleep(2000);
+                cleanScreen();
             }
             break;
         default: 

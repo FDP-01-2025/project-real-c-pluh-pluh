@@ -22,7 +22,7 @@ Pokemon setPlayerData() {
     selectedPokemon = selectPokemon(player);
     player.type = setPokemonType(selectedPokemon);
     setAdittionalData(player);
-    // printData(player);
+    printData(player);
 
     return player;
 } 
@@ -38,7 +38,7 @@ Pokemon setCpuPlayer() {
     cpuCharacter.type = setPokemonType(randomSelectedPokemon);
     setAdittionalData(cpuCharacter);
     printData(cpuCharacter);
-
+    // Sleep(15000);
     return cpuCharacter;
 } 
 
@@ -67,11 +67,65 @@ int setPokemonType(int selectedPokemon) {
 }
 
 //recibe a la variable de tipo Pokemon y una vez se ha obtenido su tipo se define su vida, daño y debilidad
+// void setAdittionalData(Pokemon &character) {
+//     switch(character.type) {
+//         case WATER:
+//             character.baseHealth = 90;
+//             character.health = 90;
+//             character.damage = 32;
+//             character.typeOfWeakness = ELECTRIC;
+//             character.attacks[0] = "Pistola de agua";
+//             character.attacks[1] = "Burbuja";
+//             character.attacks[2] = "Oleada marina";            
+//             break;
+//         case FIRE:
+//             character.baseHealth = 86;
+//             character.health = 86;
+//             character.damage = 34;
+//             character.typeOfWeakness = WATER;
+//             character.attacks[0] = "Ascuas";
+//             character.attacks[1] = "Cola ígnea";
+//             character.attacks[2] = "Tormenta de llamas";            
+//             break;        
+//         case GRASS:
+//             character.baseHealth = 115;
+//             character.health = 115;
+//             character.damage = 26;
+//             character.typeOfWeakness = FIRE;
+//             character.attacks[0] = "Látigo cepa";
+//             character.attacks[1] = "Hoja navaja";
+//             character.attacks[2] = "Eco verde";            
+//             break;        
+//         case ELECTRIC:
+//             character.baseHealth = 130;
+//             character.health = 130;
+//             character.damage = 20;
+//             character.typeOfWeakness = ROCK;
+//             character.attacks[0] = "Impactrueno";
+//             character.attacks[1] = "Chispa";
+//             character.attacks[2] = "Tormenta eléctrica";            
+//             break;        
+//         case ROCK:
+//             character.baseHealth = 105;
+//             character.health = 105;
+//             character.damage = 30;
+//             character.typeOfWeakness = GRASS;
+//             character.attacks[0] = "Lanzarocas";
+//             character.attacks[1] = "Golpe pedregoso";
+//             character.attacks[2] = "Ruina sísmica";            
+//             break;        
+//         default:
+//             cout << "\n Tipo de Pokémon no válido para salud.";
+//             break;
+//     }
+// }
+
+
 void setAdittionalData(Pokemon &character) {
     switch(character.type) {
         case WATER:
-            character.baseHealth = 90;
-            character.health = 90;
+            character.baseHealth = 100;
+            character.health = 100;
             character.damage = 32;
             character.typeOfWeakness = ELECTRIC;
             character.attacks[0] = "Pistola de agua";
@@ -97,17 +151,17 @@ void setAdittionalData(Pokemon &character) {
             character.attacks[2] = "Eco verde";            
             break;        
         case ELECTRIC:
-            character.baseHealth = 130;
-            character.health = 130;
-            character.damage = 20;
+            character.baseHealth = 110;
+            character.health = 110;
+            character.damage = 24;
             character.typeOfWeakness = ROCK;
             character.attacks[0] = "Impactrueno";
             character.attacks[1] = "Chispa";
             character.attacks[2] = "Tormenta eléctrica";            
             break;        
         case ROCK:
-            character.baseHealth = 105;
-            character.health = 105;
+            character.baseHealth = 95;
+            character.health = 95;
             character.damage = 30;
             character.typeOfWeakness = GRASS;
             character.attacks[0] = "Lanzarocas";

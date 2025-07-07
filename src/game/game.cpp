@@ -5,6 +5,7 @@
 #include "./entities/pokemon/setData.h"
 #include "./selectGameMode.h"
 #include "./singleMode/singlePlayerMode.h"
+#include "./multiplayerMode/multiPlayerMode.h"
 
 //función principal del juego que manejará toda la lógica
 void game() {
@@ -20,9 +21,5 @@ void game() {
     roundsQuantity = selectRounds();
 
     if (gameMode == SINGLE_PLAYER) playSingleMode(roundsQuantity);
-    else if (gameMode == MULTI_PLAYER);
-    else;
-    // playSingleMode();
-    // testingMatch(playerOnePokemon, playerTwoPokemon, match);
-    //select game mode menu
+    else (gameMode == MULTI_PLAYER); playMultiplayerMode(roundsQuantity);
 }
