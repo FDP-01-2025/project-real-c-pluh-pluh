@@ -2,11 +2,15 @@
 # Proyecto de C++ - [Pokemon game]
 
 ## Descripción del Proyecto
+Nuestor proyecto consiste en un juego de batallas de Pokémon por rondas, en donde el jugador puede elegir entre modo de un jugador (contra el CPU) o multijugador (contra otro jugador).
 
-Breve descripción del juego, su propósito, cómo se juega y cualquier otro detalle importante que describa la idea general del proyecto.
+El propósito del juego es seleccionar un Pokémon, enfrentarse en combates por turnos y ganar la mayor cantidad de ronas para quedarse con la victoria.
 
-**Por ejemplo:**
-Este proyecto consiste en un juego de aventuras donde el jugador debe explorar un mundo virtual, recoger objetos, resolver acertijos y enfrentar enemigos. El juego utiliza estructuras de control como `if`, `switch`, y bucles `while` y `for` para generar interacciones dinámicas.
+Durante cada turno, los jugadores pueden elegir entre diferentes ataques, cada uno con su propio daño y efectos a los diferentes Pokémones.
+
+El proyecto o juego utiliza estructuras de control como `if`, `switch`, y bucles `while` y `for` para gestionar cosas como los turnos, validar acciones y determinar el ganador de cada ronda e la batalla final.
+
+Tenemos como objetivo una experiencia lo mas parecido al juego Pokémon original en el que la toma de deciciones llevando a cabo el conocimientos de las debilidades de los Pokémon y ataques estrategicos son variantes importantes para conseguir la victoria.
 
 ## Equipo
 
