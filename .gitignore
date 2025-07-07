@@ -1,8 +1,6 @@
 # Ignorar archivos de texto
 compile.txt
-
 # Ignorar configuración de VSCode
 .vscode/
-
 # Ignorar ejecutables de Windows
 *.exe
