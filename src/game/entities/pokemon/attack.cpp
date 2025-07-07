@@ -2,6 +2,7 @@
 #include "../../../enums/pokemonAttacks.h"
 #include "../../../game/entities/structs.h"
 #include "../match/matchControllers.h"
+#include "../../../enums/gameModes.h"
 
 void showAttacks(Pokemon &pokemon, GameMatch &match) {
     for (int i = 0; i < 3; i++) {
@@ -54,7 +55,7 @@ void performAttack(Pokemon &attacker, Pokemon &defender, int attackType, int att
     }
 }
 
-void attackTurn(Pokemon &playerOne , Pokemon &playerTwo, GameMatch &match, bool cpuMode) {
+void attackTurn(Pokemon &playerOne , Pokemon &playerTwo, GameMatch &match) {
 
     while (playerOne.health > 0 && playerTwo.health > 0) { //Mientras que las vidas de los dos sean mayor a 0 entonces hacer lo siguiente.
         int attackChoice;
@@ -67,10 +68,12 @@ void attackTurn(Pokemon &playerOne , Pokemon &playerTwo, GameMatch &match, bool 
         
         }   else { //Verificar si es turno del jugador 2
             cout << playerTwo.coach << " (" << playerTwo.name << "), elige tu ataque:\n";
-            if (cpuMode) {
+            if (match.gameMode == SINGLE_PLAYER) { //Verificar si eligio modo de juego solitario
                 attackChoice = getRandomNumber(0, 2);
                 cout << "CPU eligio: [" << attackChoice << "]" << playerTwo.attacks[attackChoice] << endl;
-            } else {
+                performAttack(playerTwo, playerOne, attackChoice, match.playerTwoTurns); //Llamar a la funcion para llevar a cabo el ataque
+                if (playerOne.health <= 0) break; // Terminar si el jugador 1 ya no tiene vida
+            } else { //Si eligio multijugador hara esto
                 showAttacks(playerTwo, match); //Usar la funcion para mostrar los respectivos ataques del pokemon
                 attackChoice = askForInteger(); 
                 performAttack(playerTwo, playerOne, attackChoice, match.playerTwoTurns); //Llamar a la funcion para llevar a cabo el ataque
