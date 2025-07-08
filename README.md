@@ -5,11 +5,12 @@ Este proyecto consiste en un juego de batallas de Pokémon por rondas, donde el 
 
 ##  🔨 2. Conceptos Básicos y Estructuras de Control Usadas
 El juego está desarrollado en C++ y utiliza:
-- **Estructuras (`struct`)** para representar Pokémon y partidas.
+- **Estructuras (`struct`)** para representar Pokémon y partidas de manera clara y organizada.
 - **Condicionales (`if`, `switch`)** para controlar el flujo del juego y las decisiones del jugador.
-- **Bucles (`while`, `for`)** para manejar los turnos, las rondas y la selección de ataques.
-- **Funciones** para modularizar la lógica del juego (selección de Pokémon, ataques, control de turnos, etc.).
-- **Enums** para definir tipos de ataques, tipos de Pokémon y modos de juego.
+- **Bucles (`while`, `for`)** que manejan los turnos, las rondas y la selección de ataques.
+- **Funciones** que modularizan la lógica del juego, como la selección de Pokémon, ataques y control de turnos.
+- **Enumeradores (`enum`)** para definir tipos de ataques, tipos de Pokémon y modos de juego.
+- **Manejo de archivos de texto (`.txt`)** para cargar dinámicamente datos como nombres de Pokémon.
 
 ## 📜 3. Manual de Inicio Rápido
 -Al iniciar el juego, selecciona el modo de juego: un jugador (contra CPU) o dos jugadores.
