@@ -11,18 +11,6 @@ void setFirstTurn(GameMatch &match) {
     else { match.isPlayerOneTurn = false; match.playerTwoTurns++; }
 }
 
-
-//indica de quién es el turno
-void getCurrentTurn(const GameMatch &match, const Pokemon playerOne, const Pokemon &playerTwo) {
-    if (match.isPlayerOneTurn) {
-        cout << "Es el turno de: " << playerOne.coach << endl;
-    } else {
-        if (match.gameMode == SINGLE_PLAYER) cout << "Es el turno de: " << playerTwo.name;
-        else cout << "Es el turno de: " << playerTwo.coach;
-        cout << endl;
-    }
-}
-
 //realiza el cambio de turno
 void changeTurn(GameMatch &match) {
     match.isPlayerOneTurn = !match.isPlayerOneTurn;
