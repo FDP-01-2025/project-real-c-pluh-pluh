@@ -94,13 +94,13 @@ void attackTurn(Pokemon &playerOne, Pokemon &playerTwo, GameMatch &match) {
     bool isAttackDone = false; 
     string coach;
     string name;
-    
+
     if (match.isPlayerOneTurn || (!match.isPlayerOneTurn && match.gameMode == MULTI_PLAYER)) {
         coach = match.isPlayerOneTurn ? playerOne.coach : playerTwo.coach;
         name = match.isPlayerOneTurn ? playerOne.name : playerTwo.name;
 
         while (!isAttackDone) {
-            cout << endl << coach << " (" << name << "), elige tu ataque:\n";
+            cout << "⚔️ " <<  coach << " (" << name << "), elige tu ataque:\n";
             if (match.isPlayerOneTurn) showAttacks(playerOne, match); 
             else showAttacks(playerTwo, match);
 
@@ -119,7 +119,7 @@ void attackTurn(Pokemon &playerOne, Pokemon &playerTwo, GameMatch &match) {
 
     if (match.gameMode == SINGLE_PLAYER && !match.isPlayerOneTurn) {
         attackChoice = match.playerTwoTurns % 2 != 0 ? 1 : 2;
-        cout << "\n CPU " << playerTwo.name <<  " eligió: [" << attackChoice << "]- " << playerTwo.attacks[attackChoice] << endl;
+        cout << "\nCPU " << playerTwo.name <<  " eligió: [" << attackChoice << "]- " << playerTwo.attacks[attackChoice] << endl;
         performAttack(playerTwo, playerOne, attackChoice, match.playerTwoTurns);
     } 
 }
@@ -154,7 +154,7 @@ bool performAttack(Pokemon &attacker, Pokemon &defender, int attackType, int att
     defender.health -= finalDamage;
     if (defender.health < 0) defender.health = 0;
 
-    cout << endl << attacker.name << " ataca a " << defender.name << " por " << finalDamage
+    cout << endl << "⚔️ " << attacker.name << " ataca a " << defender.name << " por " << finalDamage
          << " daño! (Salud Restante: " << defender.health << ")\n";
 
     Sleep(3500);        // Siempre espera

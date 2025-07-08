@@ -35,11 +35,10 @@ void finishRound(GameMatch &match, Pokemon &playerOne, Pokemon &playerTwo) {
     string roundWinner = playerOne.health == 0 ? playerTwo.name : playerOne.name;
 
     if (playerOne.health == 0) match.playerTwoPoints++;
-     else match.playerOnePoints++;
+    else match.playerOnePoints++;
 
-    cout << "🎉 El ganador de la ronda es: " << roundWinner << "🎉" << endl;
+    printStringCentered("🎉 El ganador de la ronda es: " + roundWinner + " 🎉");
 
-    match.currentRound++;
     match.playerOneTurns = 0;
     match.playerTwoTurns = 0;
     playerOne.health = playerOne.baseHealth;

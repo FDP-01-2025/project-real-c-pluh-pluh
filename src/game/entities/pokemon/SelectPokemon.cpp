@@ -18,6 +18,7 @@ int selectPokemon(Pokemon &character) {
     // Pedir al usuario que elija uno
     int election;
     showPokemonNames();
+    cout << "\nDigita tu opción: ";
     election = askForInteger();
     bool isElectionOk = false;
 

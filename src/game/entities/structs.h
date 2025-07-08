@@ -5,7 +5,7 @@
 
 //estructura que contiene los datos a utilizar para los jugadores
 struct Pokemon {
-    string name;
+    string name, emoji;
     string coach;
     int baseHealth = 1, health = 1;
     int type = 1, typeOfWeakness = 1;

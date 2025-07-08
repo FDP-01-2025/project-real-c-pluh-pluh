@@ -1,4 +1,5 @@
 #include "printCentered.h"
+#include "../utils/base.h"
 
 // Obtener el ancho de la consola
 int getConsoleWidth() {
@@ -52,3 +53,4 @@ void printCentered(const string lines[], int lineCount) {
         cout << string(pad, ' ') << lines[i] << endl;
     }
 }
+

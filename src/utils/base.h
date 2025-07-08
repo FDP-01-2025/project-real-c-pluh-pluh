@@ -17,5 +17,6 @@ string askForString(); //función para lectura de cadenas de texto
 int getRandomNumber(int minNumber, int maxNumber); //función para generar un número aleatorio
 void cleanScreen(); //función que limpia la consola
 void freezeInput(); //función de relleno por si se quiere detener el flujo del programa
+void printStringCentered(const string& text); //imprimir una cadena de texto al centro vertical y horizontalmente
 
 #endif

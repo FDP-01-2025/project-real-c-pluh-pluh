@@ -15,9 +15,10 @@ Pokemon setPlayerData() {
     string pokemonName; 
     int selectedPokemon;
 
-    cout << "\n Dinos tu nombre entrenador: ";
+    cout << "\n💬 Dinos tu nombre, entrenador: ";
     player.coach = askForString();
-    cout << "\n " << player.coach << " ahora selecciona a tu pokemon, elige un Pokemon por número (1-10):\n";
+    cout << "\n⚔️💡🎯 " << player.coach << ", selecciona con sabiduría tu Pokémon (1-10):\n\n";
+
     
     selectedPokemon = selectPokemon(player);
     player.type = setPokemonType(selectedPokemon);
@@ -66,6 +67,7 @@ int setPokemonType(int selectedPokemon) {
 void setAdittionalData(Pokemon &character) {
     switch(character.type) {
         case WATER:
+            character.emoji = "🌊";
             character.baseHealth = 100;
             character.health = 100;
             character.damage = 32;
@@ -75,6 +77,7 @@ void setAdittionalData(Pokemon &character) {
             character.attacks[2] = "Oleada marina";    
             break;
         case FIRE:
+            character.emoji = "🔥";
             character.baseHealth = 86;
             character.health = 86;
             character.damage = 34;
@@ -84,6 +87,7 @@ void setAdittionalData(Pokemon &character) {
             character.attacks[2] = "Tormenta de llamas";          
             break;        
         case GRASS:
+            character.emoji = "🍃";
             character.baseHealth = 115;
             character.health = 115;
             character.damage = 26;
@@ -93,6 +97,7 @@ void setAdittionalData(Pokemon &character) {
             character.attacks[2] = "Eco verde";            
             break;        
         case ELECTRIC:
+            character.emoji = "⚡";
             character.baseHealth = 110;
             character.health = 110;
             character.damage = 24;
@@ -102,6 +107,7 @@ void setAdittionalData(Pokemon &character) {
             character.attacks[2] = "Tormenta eléctrica";            
             break;        
         case ROCK:
+            character.emoji = "⛰️";
             character.baseHealth = 95;
             character.health = 95;
             character.damage = 30;
@@ -111,7 +117,7 @@ void setAdittionalData(Pokemon &character) {
             character.attacks[2] = "Ruina sísmica";            
             break;        
         default:
-            cout << "\n Tipo de Pokémon no válido para salud.";
+            cout << "\n Tipo de Pokémon no válido.";
             break;
     }
 }

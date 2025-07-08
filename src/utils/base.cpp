@@ -81,4 +81,28 @@ string askForString() {
     }
 }
 
+void printStringCentered(const string& text) {
+    SetConsoleOutputCP(CP_UTF8);
+    SetConsoleCP(CP_UTF8);
+    // Obtener el tamaño de la consola
+    CONSOLE_SCREEN_BUFFER_INFO csbi;
+    int columns, rows;
+
+    GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
+    columns = csbi.srWindow.Right - csbi.srWindow.Left + 1;
+    rows = csbi.srWindow.Bottom - csbi.srWindow.Top + 1;
+
+    // Calcular la posición horizontal y vertical centrada
+    int x = (columns - text.length()) / 2;
+    int y = rows / 2;
+
+    // Establecer la posición del cursor
+    COORD coord;
+    coord.X = x;
+    coord.Y = y;
+    SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), coord);
+
+    // Imprimir el texto en la posición centrada
+    cout << text;
+}
 

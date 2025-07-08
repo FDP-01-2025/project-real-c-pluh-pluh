@@ -3,63 +3,50 @@
 #include "../../../enums/gameModes.h"
 #include "../pokemon/attack.h"
 #include "./battleView.h"
+#include "../../../utils/base.h"
+
+void handleMatch(Pokemon &playerOne, Pokemon &playertwo, GameMatch &match);
 
 void play(Pokemon &playerOne, Pokemon &playertwo, GameMatch &match) {
     cleanScreen();
-    cout << "⚔️ ¡Una nueva batalla Pokémon está por comenzar! ⚔️";
+    printStringCentered("⚔️ ¡Una nueva batalla Pokémon está por comenzar! ⚔️");
     Sleep(2000);
     cleanScreen();
-
     switch(match.gameMode) {
         case SINGLE_PLAYER:
-            //bucle externo para manejar las rondas de la partida
-            for (int i = 1; i <= match.roundsQuantity; i++) {
-                cout << "Ronda: " << i << endl;
-                Sleep(1500);
-                setFirstTurn(match);
-                //bucle interno para manejar ronda
-                while (playerOne.health > 0 && playertwo.health > 0) {
-                    battleView(playerOne, playertwo, match);
-                    attackTurn(playerOne, playertwo, match);
-                    changeTurn(match);
-                }
-                finishRound(match, playerOne, playertwo);
-                Sleep(2000);
-                cleanScreen();
-            }
-            if (match.playerOnePoints > match.playerTwoPoints) {
-                cout << "🎉 El ganador de la ronda es: " << playerOne.name << "🎉" << endl;
-            } else {
-                cout << "🎉 El ganador de la ronda es: " << playertwo.name << "🎉" << endl;
-            }
+            handleMatch(playerOne, playertwo, match);
             break;
-
         case MULTI_PLAYER: 
-            // bucle externo para manejar las rondas de la partida
-            for (int i = 1; i <= match.roundsQuantity; i++) {
-                cout << "Ronda: " << i << endl;
-                Sleep(1500);
-                setFirstTurn(match);
-                //bucle interno para manejar ronda
-                while (playerOne.health > 0 && playertwo.health > 0) {
-                    // getCurrentTurn(match, playerOne, playertwo);
-                    battleView(playerOne, playertwo, match);
-                    attackTurn(playerOne, playertwo, match);
-                    cleanScreen();
-                    changeTurn(match);
-                }
-                finishRound(match, playerOne, playertwo);
-                Sleep(2000);
-                cleanScreen();
-            }
-            if (match.playerOnePoints > match.playerTwoPoints) {
-                cout << "🎉 El ganador de la partida es: " << playerOne.name << "🎉" << endl;
-            } else {
-                cout << "🎉 El ganador de la partida es: " << playertwo.name << "🎉" << endl;
-            }
+            handleMatch(playerOne, playertwo, match);
             break;
         default: 
             cout << "\nopción ingresada no es válida";
             break;
+    }
+}
+
+void handleMatch(Pokemon &playerOne, Pokemon &playerTwo, GameMatch &match) {
+    //bucle externo para manejar las rondas de la partida
+    for (int i = 1; i <= match.roundsQuantity; i++) {
+        printStringCentered("⚔️ Ronda: " + to_string(i) + " ⚔️");
+        Sleep(1500);
+        cleanScreen();
+        setFirstTurn(match);
+        //bucle interno para manejar ronda
+        while (playerOne.health > 0 && playerTwo.health > 0) {
+            battleView(playerOne, playerTwo, match);
+            attackTurn(playerOne, playerTwo, match);
+            changeTurn(match);
+        }
+        finishRound(match, playerOne, playerTwo);
+        Sleep(2000);
+        cleanScreen();
+    }
+    if (match.playerOnePoints > match.playerTwoPoints) {
+        printStringCentered( "🏆 El ganador de la partida es: " + playerOne.emoji + playerOne.name + " con " + to_string(match.playerOnePoints) + " puntos" + " 🏆");
+        Sleep(3500);
+    } else {
+        printStringCentered( "🏆 El ganador de la partida es: " + playerTwo.emoji + playerTwo.name + " con " + to_string(match.playerTwoPoints) + " puntos" + " 🏆");
+        Sleep(3500);
     }
 }

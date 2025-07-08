@@ -16,13 +16,13 @@ void playSingleMode(int roundsQuantity) {
         placeSelection = askForInteger();
 
         if (placeSelection == randomPlace) {
-            cout << "¡Un Pokémon salvaje apareció! 🐾⚔️" << endl;
+            cout << "¡Un Pokémon salvaje apareció! 🐾⚔️\n";
             Sleep(2000);
             cleanScreen();
             createMatch(SINGLE_PLAYER, roundsQuantity);
             break;
         } else {
-            cout << "\n Aquí no hay nada... sigue buscando" << endl;
+            cout << "\n Aquí no hay nada... sigue buscando";
             Sleep(1000);
             cleanScreen();
         }

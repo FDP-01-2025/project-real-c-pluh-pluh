@@ -1,28 +1,24 @@
 #include "./selectGameMode.h"
 #include "../utils/base.h"
+#include "../utils/printCentered.h"
 
 using namespace std;
 
 // Desplegar el menu principal
-void showMainMenu() 
-{
+void showMainMenu()  {
     cleanScreen(); // Limpiar la consola
-    cout << R"(  
-                    ___  ___         ___           ___                                
-                    |  \/  | ___   __| | ___     __| | ___    (_)_   _  ___  __ _  ___  
-                    | |\/| |/ _ \ / _` |/ _ \   / _` |/ _ \   | | | | |/ _ \/ _` |/ _ \ 
-                    | |  | | (_) | (_| | (_) | | (_| |  __/   | | |_| |  __/ (_| | (_) |
-                    |_|  |_|\___/ \__,_|\___/   \__,_|\___|  _/ |\__,_|\___|\__, |\___/ 
-                                                           |__/            |___/           
-    )" << endl;
 
-// Ejecucion del menu principal
-    cout << "╔══════════════════════════════════════════════╗" << endl;
-    cout << "║               MENU PRINCIPAL                 ║" << endl;
-    cout << "╠══════════════════════════════════════════════╣" << endl;
-    cout << "║  1. Un jugador                               ║" << endl;
-    cout << "║  2. Dos jugadores                            ║" << endl;
-    cout << "╚══════════════════════════════════════════════╝" << endl;
+    // Menu layout
+    const string menu[] = {
+        "+--------------------------------------------------+",
+        "|             Selecciona tu modo de juego          |",
+        "+--------------------------------------------------+",
+        "|                  1.Un jugador                    |",
+        "|                 2.Dos jugadores                  |",
+        "+--------------------------------------------------+"
+    };
+
+    printCentered(menu, sizeof(menu) / sizeof(menu[0]));
 }
 // El usuario debera elegir entre entre 2 modos de juego
 int selectGameMode() {
