@@ -23,7 +23,7 @@ El juego está desarrollado en C++ y utiliza:
 Algunos Mockups de la jugabilidad son:
 ![pokemon](/src/mockUps/image.png)
 ![singlePlayer](/src/mockUps/image2.png)
-![battle](/src/mockUps/image3.pngng)
+![battle](/src/mockUps/image3.png)
 
 ## 🎯 4. Estrategia y Objetivo
 El objetivo principal es ganar más rondas que tu oponente. 
@@ -64,7 +64,7 @@ Para alcanzar este objetivo:
 
 2. Compilar este proyecto usando un compilador de C++:
    g++ main.cpp src/game/*.cpp src/game/entities/match/*.cpp src/game/entities/pokemon/*.cpp src/game/singleMode/*.cpp src/game/multiplayerMode/*.cpp src/utils/*.cpp -o pokemonGame
-3. Ejecutarse en la consola siguiente consola de Windows:
+3. Ejecutarse en la siguiente consola de Windows:
    https://apps.microsoft.com/detail/9n0dx20hk701?hl=es-es&gl=SV&ocid=pdpshare
 
 4. Ejecutar el juego:
