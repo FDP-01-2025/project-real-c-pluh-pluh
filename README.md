@@ -31,11 +31,6 @@ Para alcanzar este objetivo:
 -Usa ataques especiales en el momento adecuado (algunos solo están disponibles cada ciertos turnos).
 -Administra tus puntos de vida y elige tus ataques estratégicamente.
 
-## 💾 5. Documentación
--El código está comentado para facilitar su comprensión.
--Las funciones principales se encuentran en la carpeta pokemon y match.
--Para más detalles sobre la estructura y lógica, se encientra en los archivos .h y .cpp correspondientes.
-
 ## 💾 5. Estructura del proyecto
 
 El proyecto está organizado de manera modular para facilitar su mantenimiento, escalabilidad y comprensión. A continuación, se detalla la estructura principal y la función de cada carpeta:
