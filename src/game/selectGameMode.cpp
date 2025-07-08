@@ -3,10 +3,10 @@
 
 using namespace std;
 
-// Displays the main menu 
+// Desplegar el menu principal
 void showMainMenu() 
 {
-    cleanScreen(); // Clear the console
+    cleanScreen(); // Limpiar la consola
     cout << R"(  
                     ___  ___         ___           ___                                
                     |  \/  | ___   __| | ___     __| | ___    (_)_   _  ___  __ _  ___  
@@ -16,7 +16,7 @@ void showMainMenu()
                                                            |__/            |___/           
     )" << endl;
 
-// Menu layout
+// Ejecucion del menu principal
     cout << "╔══════════════════════════════════════════════╗" << endl;
     cout << "║               MENU PRINCIPAL                 ║" << endl;
     cout << "╠══════════════════════════════════════════════╣" << endl;
@@ -24,7 +24,7 @@ void showMainMenu()
     cout << "║  2. Dos jugadores                            ║" << endl;
     cout << "╚══════════════════════════════════════════════╝" << endl;
 }
-// Prompts the user to select a game mode (1 or 2 players)
+// El usuario debera elegir entre entre 2 modos de juego
 int selectGameMode() {
     int option;
 
@@ -40,7 +40,7 @@ int selectGameMode() {
     return option;
 }
 
-// Prompts the user to choose number of rounds (only 3 or 5)
+// El usuario debera elegir entre 3 o 5 rondas
 int selectRounds() {
     int rounds;
 
