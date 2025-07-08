@@ -61,7 +61,8 @@ Para alcanzar este objetivo:
    git clone [https://github.com/FDP-01-2025/project-real-c-pluh-pluh.git]
 
 2. Compilar este proyecto usando un compilador de C++:
-   g++ main.cpp src/game/*.cpp src/game/entities/match/*.cpp src/game/entities/pokemon/*.cpp src/game/singleMode/*.cpp src/game/multiplayerMode/*.cpp src/utils/*.cpp -o pokemonGame
+   g++ main.cpp src/game/*.cpp src/game/entities/match/*.cpp src/game/entities/pokemon/*.cpp src/game/singleMode/*.cpp src/game/multiplayerMode/*.cpp src/utils/*.cpp src/game/entities/pokemon/asciiAvatars/*.cpp -o pokemonGame
+   
 3. Ejecutarse en la siguiente consola de Windows:
    https://apps.microsoft.com/detail/9n0dx20hk701?hl=es-es&gl=SV&ocid=pdpshare
 
