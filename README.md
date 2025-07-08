@@ -36,6 +36,25 @@ Para alcanzar este objetivo:
 -Las funciones principales se encuentran en la carpeta pokemon y match.
 -Para más detalles sobre la estructura y lógica, se encientra en los archivos .h y .cpp correspondientes.
 
+## 💾 5. Estructura del proyecto
+
+El proyecto está organizado de manera modular para facilitar su mantenimiento, escalabilidad y comprensión. A continuación, se detalla la estructura principal y la función de cada carpeta:
+
+- **Raíz del proyecto:** Contiene los archivos base como `main.cpp` (punto de entrada), el ejecutable `pokemonGame.exe`, el archivo `.gitignore` y la documentación (`README.md`).
+- **src:** Carpeta principal donde se encuentra el código fuente organizado en diferentes módulos y submódulos:
+  - **enums:** Define los enumeradores globales utilizados en el proyecto, como tipos de Pokémon, ataques y modos de juego.
+  - **game:** Contiene la lógica principal del juego:
+    - Archivos principales como `game.cpp` y `loader.cpp` controlan el flujo del juego y la carga de datos.
+    - **entities:** Submódulo que agrupa las entidades clave del juego:
+      - **match:** Módulo responsable del manejo de las partidas, incluyendo la vista de batalla y el controlador de la lógica del juego durante el combate.
+      - **pokemon:** Maneja todo lo relacionado con los Pokémon, desde ataques, selección y configuración de datos, hasta representaciones visuales en ASCII dentro de `asciiAvatars`.
+    - **singleMode** y **multiplayerMode:** Contienen la implementación específica para los modos de juego individual y multijugador, respectivamente.
+  - **utils:** Funciones y utilidades auxiliares reutilizables, como impresión centrada en pantalla y funciones base.
+  - **mockUps:** Carpeta con recursos gráficos y mockups utilizados para diseño o referencia visual.
+
+Cada archivo `.cpp` tiene su correspondiente archivo `.h` para una clara separación entre implementación y definición, lo que facilita la modularización y reutilización del código. Los comentarios dentro del código ayudan a entender la funcionalidad específica de cada módulo y función.
+
+
 ## 💪 Equipo
 
 - **Nombre del equipo:** [Real C pluh pluh ]
