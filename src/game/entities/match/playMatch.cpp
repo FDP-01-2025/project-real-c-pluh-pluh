@@ -43,10 +43,10 @@ void handleMatch(Pokemon &playerOne, Pokemon &playerTwo, GameMatch &match) {
         cleanScreen();
     }
     if (match.playerOnePoints > match.playerTwoPoints) {
-        printStringCentered( "🏆 El ganador de la partida es: " + playerOne.emoji + playerOne.name + " con " + to_string(match.playerOnePoints) + " puntos" + " 🏆");
+        printStringCentered( "🏆 El ganador de la partida es: " + playerOne.emoji + " " + playerOne.name + " con " + to_string(match.playerOnePoints) + " puntos" + " 🏆");
         Sleep(3500);
     } else {
-        printStringCentered( "🏆 El ganador de la partida es: " + playerTwo.emoji + playerTwo.name + " con " + to_string(match.playerTwoPoints) + " puntos" + " 🏆");
+        printStringCentered( "🏆 El ganador de la partida es: " + playerTwo.emoji + " " + playerTwo.name + " con " + to_string(match.playerTwoPoints) + " puntos" + " 🏆");
         Sleep(3500);
     }
 }

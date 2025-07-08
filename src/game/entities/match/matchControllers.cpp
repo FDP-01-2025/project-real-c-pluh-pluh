@@ -38,6 +38,13 @@ void finishRound(GameMatch &match, Pokemon &playerOne, Pokemon &playerTwo) {
     else match.playerOnePoints++;
 
     printStringCentered("🎉 El ganador de la ronda es: " + roundWinner + " 🎉");
+    Sleep(2000);
+    cleanScreen();
+    printStringCentered(playerOne.emoji + " " + playerOne.name + " puntos: " + to_string(match.playerOnePoints));
+    Sleep(2000);
+    cleanScreen();
+    printStringCentered(playerTwo.emoji + " " + playerTwo.name + " puntos: " + to_string(match.playerTwoPoints));
+    Sleep(2000);
 
     match.playerOneTurns = 0;
     match.playerTwoTurns = 0;
