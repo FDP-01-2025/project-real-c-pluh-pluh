@@ -64,10 +64,10 @@ Para alcanzar este objetivo:
    ```bash
    g++ main.cpp src/game/*.cpp src/game/entities/match/*.cpp src/game/entities/pokemon/*.cpp src/game/singleMode/*.cpp src/game/multiplayerMode/*.cpp src/utils/*.cpp src/game/entities/pokemon/asciiAvatars/*.cpp -o pokemonGame
    
-3. Ejecutarse en la siguiente consola de Windows:
+3. Ejecutarse en la siguiente terminal de Windows (Link de descarga adjunto en caso de no estar instalada):
    ```bash
    https://apps.microsoft.com/detail/9n0dx20hk701?hl=es-es&gl=SV&ocid=pdpshare
 
-4. Ejecutar el juego:
+4. Para iniciar el juego abrir el archivo ejecutable o escribir en la terminal:
    ```bash
    ./pokemonGame.exe
